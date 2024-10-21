@@ -1,0 +1,382 @@
+
+<style>
+  .ic--baseline-delete {
+display: inline-block;
+width: 2em;
+height: 2em;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z'/%3E%3C/svg%3E");
+}
+</style>
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Satta App</title>
+<!-- Favicons -->
+<link rel="apple-touch-icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="180x180">
+<link rel="icon" href="assets/images/logo.png" sizes="32x32" type="image/png">
+
+<!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/custom.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+<link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" />
+ 
+</head>
+
+<body>
+<div class="main-wrapper" id="body-pd">
+
+<!-- sidebar start -->
+<div class="sidenav d-flex flex-column justify-content-between" id="nav-bar">
+<div class="sidebody">
+  <div class="sidebar-logo">
+    <a href="index.html" class="d-flex align-items-center">
+      <!-- <img src="assets/images/logo.png" alt="logo" width="70"> -->
+      <i class="ri-user-line me-2 text-info"></i>
+      <div class="logo-info">
+        <h2 class="fw-bold fs-5 m-0">{{client}}</h2>
+        <small class="m-0">{{client.mobile}}</small>
+      </div>
+    </a>
+  </div>
+  <ul class="sidebar-menu" id="nav_accordion">
+    <li class="nav-item">
+      <a href="/games">
+        <span class="mm-text dash-item"><i class="ri-home-4-line me-3 fs-2 text-info"></i>Home</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/myprofile">
+        <span class="mm-text dash-item"><i class="ri-user-line me-3 fs-2 text-info"></i>My Profile</span>
+      </a>
+    </li>
+              <li class="nav-item">
+      <a href="/history">
+        <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 text-info"></i>My History</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/bid-history">
+        <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 text-info"></i>My Bid</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/payment">
+        <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 text-info"></i>Payment Details</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/passbook">
+        <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 text-info"></i>Account Statement</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/gameprice">
+        <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 text-info"></i>Game Rates</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="/howtoplay">
+        <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 text-info"></i>How to Play</span>
+      </a>
+    </li>
+    
+              <li class="nav-item">
+      <a href="/privacypolicy">
+        <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 text-info"></i>Privacy Policy</span>
+      </a>
+    </li>
+              
+    <li class="nav-item">
+        <a href="/Elogout" onclick="event.preventDefault();
+                  document.getElementById('logout-form').submit();">
+                                <span class="mm-text dash-item"><i class="ri-notification-line me-3 fs-2 text-info"></i>Logout</span></a>
+                              <form id="logout-form" action="/Elogout" method="POST" class="d-none">
+                                  <input type="hidden" name="_token" value="i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ">                                    </form>
+      
+    </li>
+   
+  </ul>
+</div>
+
+</div><!-- sidebar end -->
+
+<!-- main header start -->
+  <main class="fullheight bg-light">
+
+<!-- main header end -->
+      <div class="main-body">
+          <div class="home-wraper">
+              <div class="container">
+                  <form action="/spmotarbet" id="myform" method="POST">
+                    {% csrf_token %}
+          <input type="hidden" name="_token" value="kC5PLvUv6M9LXE4yqz4Vb9dL5RjSDZ8v1nkQdRpg"><div class="fxdsng sticky-top bg-white">
+<div class="row gy-3 px-0">
+          <div class="col-sm-12 mb-2 mt-0 px-0">
+           <div class="bg-info shadow-sm px-3 py-2 d-flex align-items-center justify-content-between" style="background-color: #d0960e !important;">
+            <h5 class="fw-semibild m-0"><a href='/gametype{{name}}'><span class="ri-arrow-left-line me-3"></span></a>DP Motor</h5>
+            <div class="wallet px-3 py-1 rounded-2 bg-white bg-opacity-50">
+            <i class="ri-wallet-3-line fs-6"></i> <span class="ms-2 fs-6">{{client.wallet}}</span>
+          </div>
+           </div>
+          </div>
+        </div>
+        
+          <input type="hidden" name="game_id" value="35"/>
+          <input type="hidden" name="pana" value="dpmotor"/>
+          <input type="hidden" name="pana_name" value="DP Motor"/>
+          <input type="hidden" name="page" value="dp-motor"/>
+          <input type="hidden" name="game_name" value="{{name}}"/>
+          <div class="row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-3 px-3">
+          <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+          <input type="text" readonly class="form-control w-auto" value="{% now "Y-m-d" %}">
+                <input type="hidden"  class="form-control w-auto" name="bid_date" value="{{td}}">
+          </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+              <div class="select-field ms-sm-auto d-sm-table">
+                  <select name="session" id="type" class="form-select w-auto">
+                      <option value="open">{{name}} OPEN</option>
+                      <option value="close">{{name}} CLOSE</option>
+                  </select>
+              </div>
+          </div>
+                  </div>
+      <div id="message"></div>
+       <div class="row py-3 px-2">
+              <div class="digit-field col-6">
+                  Digit
+              <input type="number" name="digits" id="digits" class="form-control text-center border-dark" Placeholder="Enter Digit"> 
+          </div>
+          <div class="digit-field col-6">
+              Points
+              <input type="number" max="100000"  oninput="this.value=(parseInt(this.value)||'')" min="10" name="points" id="points" class="form-control text-center border-dark" Placeholder="Enter Points"> 
+          </div>
+       </div>
+      <div class="d-grid gap-2 col-4 mx-auto py-3">
+              <button type="submit" class="btn btn-info " style="background-color: #d0960e !important;">Submit</button>
+      </div> 
+       </div>
+<div class="select-digit-wrap snank spb mt-4">
+          <div class="d-flex flex-column gap-4 px-0">
+          <table class="table">
+<thead>
+  {% comment %} <tr>
+    <th scope="col">Digit</th>
+    <th scope="col">Points</th>
+    <th scope="col">Game Type</th>
+    <th scope="col"></th>
+  </tr> {% endcomment %}
+</thead>
+<tbody class="tdata">
+  
+</tbody>
+</table>
+</div>
+<div class="bibtn d-flex justify-content-center align-items-center py-2 fixed-bottom px-4 bg-light">
+  {% comment %} <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#submitpop">Submit </button> {% endcomment %}
+  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#submitpop">  Launch </button> -->
+</div>
+      </div>
+      
+      
+      <!-- modal-->
+<div class="modal fade" id="submitpop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header bg-info text-dark">
+      <h1 class="modal-title fs-5" id="exampleModalLabel">{{name}} {{td}}</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <div class="table-responsive">
+          <table class="table table-bordered">
+              <thead>
+                  <tr>
+                      <th>Digits</th>
+                      <th>Points</th>
+                      <th>Game Type</th>
+                  </tr>
+              </thead>
+              <tbody class="tbdata">
+                <input type="hidden" id="digit1" readonly name="digit1">
+                <input type="hidden" id="points1" readonly name="points1">
+                <input type="hidden" id="total" readonly name="total">
+              </tbody>
+              <tfoot>
+                  <tr>
+                      <td colspan="4">
+                          <p>*Note Bid Once Played Will Not Be Cancelled*</p>
+                      </td>
+                  </tr>
+              </tfoot>
+          </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="row tbldta gy-2">
+      <div id="bid"  class="bid"></div>
+        <div class="col-6">
+          <h6>Total Bids</h6>
+        </div>
+        <div class="col-6 text-end">
+          <h6 id="tbid">0</h6>
+        </div>
+        <div class="col-6">
+          <h6>Total Bid Amount</h6>
+        </div>
+        <div class="col-6 text-end">
+          <h6  id="tpoints">0</h6>
+        </div>
+        <div class="col-6">
+          <button type="button" class="btn btn-primary">Cancel</button>
+        </div>
+        <div class="col-6 text-end">
+         <button type="submit" class="btn btn-info" onclick="this.form.submit();this.disabled = true;">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</div>
+</form>
+              </div>
+          </div>
+      </div>
+      <!-- Page Area End Here -->
+  </main>
+</div>
+
+<script src="https://dpboss777.co.in/assets/frontend/assets/js/jquery.min.js"></script>
+<script src="https://dpboss777.co.in/assets/frontend/assets/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+<script src="https://dpboss777.co.in/assets/frontend/assets/js/main.js"></script>
+  
+
+
+
+      
+  
+  
+<script>
+$(document).ready(function(){
+$('.btnreset').on('click',function(){
+    $('.bid').html("");
+      $('.tdata').html("");
+      $('#tbid').html("0");
+      $('#tpoints').html("0");
+      $('.digits').val("");
+      $('.tbdata').html("");
+  });
+  $('#type').on('change',function(){
+    $('.bid').html("");
+      $('.digits').val("");
+      $('.tdata').html("");
+      $('#tbid').html("0");
+      $('#tpoints').html("0");
+      $('.tbdata').html("");
+  });
+});
+  $(document).ready(function() {
+          $('.btnadd').on('click',function(e){
+              // console.log('dfas');
+              var digits=$("#digits").val();
+              var points=$("#points").val();
+              var session = $('#type').find(":selected").val();
+              if(digits==""){ 
+                $('#message').html(
+                              '<div class="alert alert-danger alert-dismissable">Please enter digit 0 to 9!</div>'
+                              );
+                              setTimeout(function(){
+                              $(".alert-danger").hide();
+                          }, 5000);
+                          return false;
+                        }
+              if(points==""){ 
+                $('#message').html(
+                              '<div class="alert alert-danger alert-dismissable">Please enter Points!</div>'
+                              );
+                              setTimeout(function(){
+                              $(".alert-danger").hide();
+                          }, 5000);
+                          return false;
+                        }
+              $("#digits").val('');
+              $("#points").val('');
+              $.ajaxSetup({
+                  headers: {
+                      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                  }
+              });
+              e.preventDefault();
+              var _token = $('input[name="_token"]').val();
+              $.ajax({
+              type:'POST',
+              url:'https://dpboss777.co.in/ajax-sp-motor',
+              data: {digits:digits, _token:_token,points:points,session:session},
+              success:function(data) {
+                  // return response()->json(['success' => 'Added new student']);
+                  console.log(data);
+                  if($.isEmptyObject(data.error)){
+                      if(data.success==true){
+                          $('.tdata').html(data.thtml);
+                          $('.tbdata').html(data.html);
+                          $('#tbid').html(data.totalbid);
+                          $('#tpoints').html(data.total);
+                          $('#bid').html(data.bid);
+                      }
+                  }else{
+                      printErrorMsg(data.error);
+                  }
+              }
+              });
+          });
+          function printErrorMsg (msg) {
+              $(".print-error-msg").find("ul").html('');
+              $(".print-error-msg").css('display','block');
+              $.each( msg, function( key, value ) {
+                  $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+              });
+          }
+          $(document).on('click','.deletebtn', function(){
+            var id=$(this).data('id');
+            var point=parseInt($(this).data('point'));
+            $('.delete'+id).remove();
+            var tbid=parseInt($('#tbid').html())-1;
+            var tpoints=parseInt($('#tpoints').html())-point;
+            
+            $('#tbid').html(tbid);
+            $('#tpoints').html(tpoints);
+            console.log(tpoints);
+          });
+      });
+    </script>
+    <script>
+      $(document).ready(function() {
+        $('#points').on('change', function(){
+            var min=$(this).attr('min');
+            var max=$(this).attr('max');
+              if(!(parseInt($(this).val())>=min && parseInt($(this).val())<=max)){
+                $(this).val(min);
+                $('#message').html(
+                              '<div class="alert alert-danger alert-dismissable">Please enter min '+min+' to '+max+' Points!</div>'
+                              );
+                              setTimeout(function(){
+                              $(".alert-danger").hide();
+                          }, 5000);
+              }
+        });
+      });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+    Game Management
+{% endblock %}
+
+{% block content %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Market Games</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                <li class="breadcrumb-item active">Games</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3 class="card-title">
+                      <a data-bs-toggle="modal" data-bs-target="#AddGame">Add Game</a>
+                  </h3>
+                </div>
+                
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Sr No.</th>
+                        <th>Game Name</th>
+                        <th>Open Time</th>
+                        <th>Close Time</th>
+                        <th>Active</th>
+                        <th>Game Status</th>
+                        <th>Action</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                                       {% for i in gm %}
+                                       
+                                       <tr>
+                                          <td>{{forloop.counter}}</td>
+                                          <td>{{i.name}}</td>
+                                          <td>
+                                              {{i.open}}
+                                           
+                                          </td>
+                                          <td>{{i.close}}</td>
+                                          <td>
+                                            {% if i.status == "open"   %}
+                                            <a href="/MarketGameStatus{{i.name}}" class="btn btn-sm btn-success">Yes</a>                      
+                                                {% else %}                                             
+                                                <a href="/MarketGameStatus{{i.name}}" class="btn btn-sm btn-danger">No</a>                                                   {% endif %}
+                                          </td>
+                                          <td>{{i.status}}</td>
+                                          <td>
+                                            <a href="/MarketHoliday{{i.name}}"  class="btn btn-primary">Holiday</a>
+                                            {% comment %} <a href="#" data-toggle="modal" data-target="#EditGame{{forloop.counter}}" class="btn btn-primary">Edit Game</a> {% endcomment %}
+                                          </td>
+                                          
+                                         
+                                          <td>
+                                                <a href="/GameDelete{{i.name}}" class="btn btn-danger btn-sm">Delete</a>
+                                             
+                                              </td>
+                                              <div class="modal fade" id="EditGame{{forloop.counter}}">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content bg-primary">
+                                                        <div class="modal-header">
+                                                          <h4 class="modal-title">Edit Game</h4>
+                                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                          </button>
+                                                        </div>
+                                                        <form method="POST">
+                                                            {% csrf_token %}
+                                                            <div class="modal-body">
+                                                                
+                                                               <input type="hidden" name="market_sn" value="52"  />
+                                                                    
+                                                                <div class="form-group">
+                                                                    <label>Game Name</label>
+                                                                    <input type="text" class="form-control" name="gameName" value="{{i.name}}"  disabled/>
+                                                                </div>
+                                                                
+                                                             
+                                                                <div class="form-group">
+                                                                    <label>Open Time</label>
+                                                                    <input type="time" value="{{i.open}}" class="form-control" name="OpenTime" required />
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Close Time</label>
+                                                                    <input type="time" value="{{i.close}}" class="form-control" name="CloseTime" required />
+                                                                </div>
+                                                                
+                                                                <div class="form-group">
+                                                                    <label>Does market have special timings ?</label>
+                                                                    <select id="type52" name="type" class="form-control" onchange="time_check52(this.value)">
+                                                                        
+                                                                            <option value='Yes'>Yes</option>
+                                                                       
+                                                                    </select>
+                                                                </div>
+                                                                
+                                                  
+                                                                
+                                                
+                                                                <div id="timings{{forloop.counter}}" class="timings">
+                                                                    <h4>Timings</h4>
+                                                                    <div class="col-sm-12">
+                                                                        
+                                                                                                    
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>SUNDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="SUNDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"SUNDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="SUNDAYopen" name="SUNDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="SUNDAYclose" name="SUNDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>MONDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="MONDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"MONDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="MONDAYopen" name="MONDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="MONDAYclose" name="MONDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>TUESDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="TUESDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"TUESDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="TUESDAYopen" name="TUESDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="TUESDAYclose" name="TUESDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>WEDNESDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="WEDNESDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"WEDNESDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="WEDNESDAYopen" name="WEDNESDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="WEDNESDAYclose" name="WEDNESDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>THURSDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="THURSDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"THURSDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="THURSDAYopen" name="THURSDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="THURSDAYclose" name="THURSDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>FRIDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="FRIDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"FRIDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="FRIDAYopen" name="FRIDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="FRIDAYclose" name="FRIDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                   
+                                                                        <div class="row" style="align-items: center;">
+                                                                                <div class="col-sm-2">
+                                                                                <span>SATURDAY</span>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                 <div class="form-group" style="    margin-bottom: 10px !important">
+                                                                                    <select class="form-control" name="SATURDAYtimetype" id="exampleFormControlSelect1" onchange="open_change(this.value,"SATURDAY")">
+                                                                                        
+                                                                                        <option value='open' >Open</option>
+                                                                                        <option value='close' >Close</option>
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Open Time (24h format)" id="SATURDAYopen" name="SATURDAYopen">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <div class="form-group form-input">
+                                                                                    <input type="text" class="form-control" value=""  placeholder="Close Time  (24h format)"  id="SATURDAYclose" name="SATURDAYclose">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                       
+                                                                                                  
+                                                                       
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                               
+                                                                
+                                                                
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                                                                <button type="submit" name="EditGame" class="btn btn-outline-light">Save changes</button>
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                          <!-- /.modal-content -->
+                                                    </div>
+                                                        <!-- /.modal-dialog -->
+                                                </div>
+                                        </tr>
+                                       
+                                       {% endfor %}
+
+                                      </tbody>
+                  </table>
+                  
+                                   <ul class="pagination">
+                    
+                    
+                                      
+                    <li class="currentpage page-item"><a class='page-link' href="?page=1">1</a></li>
+  
+                    <li class="page page-item"><a class='page-link' href="?page=2">2</a></li>                  <li class="page page-item"><a class='page-link' href="?page=3">3</a></li>
+                                      <li class="dots page-item">...</li>
+                    <li class="end page-item"><a class='page-link' href="?page=901">901</a></li>
+                    
+                                      <li class="next page-item"><a class='page-link' href="?page=2">Next</a></li>
+                                    </ul>
+                                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+        </div>
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+  
+  </div>
+
+
+
+
+
+  
+
+  
+   
+<!-- The Modal -->
+<div class="modal fade" id="AddGame">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Game</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <form action="/AdminAddGame" method="post">
+        {% csrf_token %}
+        <input type="text" name="name" id="" class="form-control" placeholder="Enter Game Name" required><br>
+        <input type="time" name="open" id="" class="form-control" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" placeholder="Enter Open Time Ex. 00:00 AM" required><br>
+        <input type="time" name="close" id="" class="form-control" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" placeholder="Enter Close Time Ex. 00:00 AM" required><br>
+        <input type="text" name="chart" id="" class="form-control" placeholder="Enter Chart Link" required><br>
+        <button type="submit" class="btn btn-success">Add</button>
+      </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+</div>
+
+
+
+      
+    
+{% endblock %}

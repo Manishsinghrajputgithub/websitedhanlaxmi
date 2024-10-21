@@ -1,0 +1,149 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+    User Management
+{% endblock %}
+
+{% block content %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Users</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                  <li class="breadcrumb-item active">Users</li>
+                </ol>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+    
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                        <a href="#" class="btn btn-primary">Un-approved Users List</a>
+                      
+                       <form class="forms-sample" method="get" enctype="multipart/form-data" autocomplete="off"  style="margin-top:15px;">
+                                      
+                                      <p>Search with Name, Mobile number, Email, Wallet Balance OR Referral Code</p>
+                                        
+                                       <div class="row">
+                                           <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" name="query" value="" placeholder="Enter Keyword" required>
+                                                </div>
+                                           </div>
+                                           <div class="col-sm-4">
+                                               <button type="submit" class="btn btn-primary mr-2 mt-4" style="width: 100%;margin-top: 0 !important;">Search</button>
+                                           </div>
+                                       </div>
+                                        
+                                        
+                                    </form>
+                    </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Sr No.</th>
+                          <th>User Name</th>
+                          <th>User Mobile</th>
+                          <th>Points</th>
+                          <th>Registration Date</th>
+                          <th>Betting</th>
+                          <th>Paytm</th>
+                          <th>Point Transfer</th>
+                          <th>Active</th>
+                          <th>View</th>
+                          <th>Delete</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                                         {% for i in dt %}
+                                         
+                                         <tr>
+                                            <td>{{forloop.counter}}</td>
+                                            <td>{{i.name}}</td>
+                                            <td>
+                                                {{i.mobile}}<br>
+                                              <a href="https://api.whatsapp.com/send?phone=91{{i.mobile}}" target="_blank"><i class="fab fa-whatsapp" style="color:green;font-size:20px;"></i></a>
+                                              &nbsp;&nbsp;
+                                              <a href="tel:+91 {{i.mobile}}" target="_blank"><i class="fas fa-phone-alt" style="font-size:20px;"></i></a>
+                                            </td>
+                                            <td>{{i.wallet}}</td>
+                                            <td>{{i.join}}</td>
+                                            <td>
+                                                                        <a href="#" class="btn btn-sm btn-success">Yes</a>
+                                                                    </td>
+                                            <td>
+                                                                        <a href="#" class="btn btn-sm btn-success">Yes</a>
+                                                                    </td>
+                                            <td>
+                                                                        <a href="#" class="btn btn-sm btn-danger">No</a>
+                                                                    </td>
+                                            <td>                      
+                                              {% if i.status == "yes" %}
+                                              <a href="/UserDeactive{{i.mobile}}" class="btn btn-sm btn-success">Yes</a>
+                                              {% else %}
+                                              <a href="/UserDeactive{{i.mobile}}" class="btn btn-sm btn-danger">No</a>
+                                              
+                                              {% endif %}
+                                                                    </td>
+                                            <td>
+                                              <a href="/UserProfile{{i.mobile}}"><i class="fas fa-eye" style="font-size:25px;"></i></a>
+                                            </td>
+                                            <td>
+                                                  <a href="/Userdelete{{i.mobile}}" class="btn btn-danger btn-sm">Delete</a>
+                                               
+                                                </td>
+                                          </tr>
+                                         
+                                         {% endfor %}
+
+                                        </tbody>
+                    </table>
+                    
+                                     <ul class="pagination">
+                      
+                      
+                                        
+                      <li class="currentpage page-item"><a class='page-link' href="?page=1">1</a></li>
+    
+                      <li class="page page-item"><a class='page-link' href="?page=2">2</a></li>                  <li class="page page-item"><a class='page-link' href="?page=3">3</a></li>
+                                        <li class="dots page-item">...</li>
+                      <li class="end page-item"><a class='page-link' href="?page=901">901</a></li>
+                      
+                                        <li class="next page-item"><a class='page-link' href="?page=2">Next</a></li>
+                                      </ul>
+                                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    
+    </div>
+
+
+
+ 
+{% endblock %}

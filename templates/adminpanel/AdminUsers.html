@@ -1,0 +1,60 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+   Admin User Management
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+
+<section class="main">
+        <h4 style="border-bottom: 2px solid orange; " class="pb-2 text-info">Admin User Data </h4>
+        <div class="table-responsive">
+        <table id="example" class="display text-info" >
+            <thead>
+
+                <tr class="text-dark">
+                    <th>SR.No</th>
+                    <th>Name</th>
+                    <th>Contact No.</th>
+                    <th>Password</th>
+                    <th>Whatsapp</th>
+                    <th>Joining</th>
+                    <th>Action</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+
+                {%for i in dt%}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.mobile}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.whatsapp}}</td>
+                    <td>{{i.join}}</td>
+                    
+                    <td>&nbsp;<a href="/Admindelete{{i.mobile}}"><i class="fa-solid fa-trash text-danger fs-5"></i></a></td>
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+      
+      
+    
+
+</section>
+    <script src="../static/adminpanel/dashboard.js"></script>  
+    <script src="../static/adminpanel/adminhome.js"></script>
+{% endblock %}

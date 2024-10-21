@@ -1,0 +1,48 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+   Admin User Management
+{% endblock %}
+
+{% block content %}
+
+
+<div class="content-wrapper">
+
+
+<section class="content">
+    <h5 style="border-bottom: 2px solid orange; " class="pb-2 text-info">Main Game Win Ratio For All Bids </h5>
+  
+        <form action="/UpdateGameRates" method="post">
+          {% csrf_token %}
+          <label for="fname">Single Digit: </label><br>
+          <input type="text" name="SingleDigit" id="" value="{{data.SingleDigit}}" class="form-control mt-2" ><br>
+          <label for="lname">Jodi:</label><br>
+          <input type="text" name="Jodi" id="" value="{{data.Jodi}}" class="form-control mt-2" ><br>
+         
+          <label for="lname">Jodi:</label><br>
+          <input type="text" name="SinglePanna" id="" value="{{data.SinglePanna}}" class="form-control mt-2" ><br>
+         
+          <label for="lname">Double Panna:</label><br>
+          <input type="text" name="DoublePanna" id="" value="{{data.DoublePanna}}" class="form-control mt-2" ><br>
+         
+          <label for="lname">Tripple Panna:</label><br>
+          <input type="text" name="TripplePanna" id="" value="{{data.TripplePanna}}" class="form-control mt-2" ><br>
+         
+          <label for="lname">Half Sangam:</label><br>
+          <input type="text" name="HalfSangam" id="" value="{{data.HalfSangam}}" class="form-control mt-2" ><br>
+         
+          <label for="lname">Full Sangam:</label><br>
+          <input type="text" name="FullSangam" id="" value="{{data.FullSangam}}" class="form-control mt-2" ><br>
+         
+          <button type="submit" style="background-color: green; color: white; padding: 5px;" >Update</button>
+
+        </form>
+ 
+  <br>
+   <h4 class="text-center text-warning">{{message}}</h4>
+
+  
+</section>
+
+</div>
+{% endblock %}

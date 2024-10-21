@@ -1,0 +1,116 @@
+{% extends "link.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- main header end -->
+<div class="main-body bg-info vh-100">
+    <div class="login-wraper py-5 px-3">
+      <div class="row justify-content-center">
+        <div class="col-sm-7">
+         <div class="bg-light rounded-4 shadow-sm p-md-5 p-4">
+    <form  class="mt-sm-0 mt-5">
+        <input type="hidden" name="_token" value="i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ">            <div class="logo-wrap text-center">
+          <img src="{% static 'images/as.jpeg' %}" alt="logo" style="border-radius: 100%;" class=" w-50">
+          <h3 class="fw-semibold mt-3 text-info">Forgot Password</h3>
+            </div>
+        <div class="alert alert-primary msg" role="alert"  style="display:none;"></div>
+      <div  id="step1">
+        
+        <div class="mb-4">
+          <input type="email" class="form-control" id="contact_no" name="contact_no"  placeholder="Enter registered Mobile No.">
+        </div>
+        <div class="mb-4">
+          <button type="button" class="common_btn_2 btn1 btn btn-info btn-lg w-100">Send</button>
+          <p class="my-2">Do have an Account? <a href="/loginpg" class="text-info fw-bold">Login Here</a></p>
+        </div>
+      </div>
+      <div  id="step2" style="display:none;">
+        <div class="mb-4">
+          <input type="number" class="form-control" id="code" name="code"  placeholder="Enter 4 digite OTP Code">
+        </div>
+        <div class="mb-4">
+          <input type="password" class="form-control" id="password" name="password"  placeholder="password">
+        </div>
+        <div class="mb-4">
+          <input type="password" class="form-control" id="conf_password" name="conf_password"  placeholder="confirm password">
+        </div>
+        <div class="mb-4">
+          <button type="button" class="common_btn_2 btnback btn btn-info btn-lg">Back</button>
+          <button type="button" class="common_btn_2 btn2 btn btn-info btn-lg ">Send</button>
+        </div>
+      </div>
+    </form>
+    </form>
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    $('body').on('click', '.btn1', function(evt){
+          var contact_no = $('#contact_no').val();
+          $('.msg').hide();
+            $.ajax({
+                type:'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:'https://dpboss777.co.in/pass-email-ajax',
+                data: {"_token": "i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ",'type':'step1', contact_no:contact_no},
+                success:function(data) {
+                    console.log(data);
+                    if(data.success){
+                      $('#step1').hide();
+                      $('#step2').show();
+                      $('.msg').show();
+                      $('.msg').html(data.message);
+                    }else{
+                      $('#step2').hide();
+                      $('#step1').show();
+                      $('.msg').show();
+                      $('.msg').html(data.message);
+                    }
+                }
+              });
+        
+    });
+    $('body').on('click', '.btn2', function(evt){
+          var code = $('#code').val();
+          var password = $('#password').val();
+          var conf_password = $('#conf_password').val();
+          $('.msg').hide();
+            $.ajax({
+                type:'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url:'https://dpboss777.co.in/pass-email-ajax',
+                data: {"_token": "i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ",'type':'step2', code:code, password:password, conf_password:conf_password},
+                success:function(data) {
+                    console.log(data);
+                    if(data.success){
+                      $('.msg').show();
+                      $('.msg').html(data.message);
+                      window.location = 'https://dpboss777.co.in';
+                    }else{
+                      $('.msg').show();
+                      $('.msg').html(data.message);
+                    }
+                }
+              });
+        
+    });
+    $('.btnback').on('click',function(){
+      $('#step2').hide();
+      $('#step1').show();
+      $('#email').val('');
+      $('.msg').hide();
+    });
+    </script>
+
+{% endblock  %}

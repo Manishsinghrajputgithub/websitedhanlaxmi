@@ -1,0 +1,43 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+   Admin Mode Management
+{% endblock %}
+
+{% block content %}
+<section class="content-header" style="background-image: url(https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+  
+
+        <div class="main-skills" style="display: flex;">
+          <div class="card p-2 m-2" style="background-image: url(https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); color: white;">
+      
+            <h3>Calculator Mode</h3>
+            <p>switch to calculator mode.</p>
+            <button type="button" class="btn btn-primary"  onclick="offmode()">Calculator</button>          </div>
+            
+          <div class="card p-2 m-2" style="background-image: url(https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1); color: white;">
+          
+            <h3>Application Mode</h3>
+            <p>switch to application mode</p>
+            <button type="button" class="btn btn-success" onclick="onmode()">Application</button>          </div>
+          
+        </div>
+       
+        <br>
+         <h4 class="text-center text-warning">{{message}}</h4>
+
+        
+</section>
+
+  <script>
+
+    function onmode(){
+        window.location = "/changemode{{"on"}}";
+    }
+
+    function offmode(){
+        window.location = "/changemode{{"off"}}";
+    }
+
+  </script>
+ 
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+   Admin User Management
+{% endblock %}
+
+{% block content %}
+
+<div class="content-wrapper">
+
+   <section class="content">
+      <h4 style="border-bottom: 2px solid orange; " class="pb-2 text-info">Support User </h4>
+    
+          <form action="/UpdateSupport" method="post">
+            {% csrf_token %}
+            <label for="fname">Whatsapp No:</label><br>
+            <input type="text" name="whatsapp" id="" value="{{data.whatsapp}}" class="form-control mt-2" placeholder="Whatsapp"><br>
+            <label for="lname">Telegram Username:</label><br>
+            <input type="text" name="telegram" id="" value="{{data.telegram}}" class="form-control mt-2" placeholder="Telegram Link"><br>
+            <label for="lname">Contact No:</label><br>
+            <input type="text" name="contact" id="" value="{{data.support}}" class="form-control mt-2" placeholder="Contact No."><br>
+            <label for="lname">Bonus:</label><br>
+            <input type="text" name="bonus" id="" value="{{data.bonus}}" class="form-control mt-2" placeholder="bonus."><br>
+            <label for="lname">MinimumDeposit:</label><br>
+            <input type="text" name="MinimumDeposit" id="" value="{{data.MinimumDeposit}}" class="form-control mt-2" placeholder="MinimumDeposit"><br>
+            <label for="lname">MinimumWithdraw:</label><br>
+            <input type="text" name="MinimumWithdraw" id="" value="{{data.MinimumWithdraw}}" class="form-control mt-2" placeholder="MinimumWithdraw"><br>
+            <label for="lname">WithdrawOpenTime:</label><br>
+            <input type="text" name="WithdrawOpenTime" id="" value="{{data.WithdrawOpenTime}}" class="form-control mt-2" placeholder="WithdrawOpenTime."><br>
+            <label for="lname">WithdrawCloseTime:</label><br>
+            <input type="text" name="WithdrawCloseTime" id="" value="{{data.WithdrawCloseTime}}" class="form-control mt-2" placeholder="WithdrawCloseTime"><br>
+            
+            <label for="lname">UPI ID:</label><br>
+            <input type="text" name="upi" id="" value="{{data.upi}}" class="form-control mt-2" placeholder="Upi Id"><br><br>
+            <button type="submit" style="background-color: green; color: white; padding: 5px;" >Update</button>
+  
+          </form>
+   
+    <br>
+     <h4 class="text-center text-warning">{{message}}</h4>
+</div>
+
+
+  
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+Today Result Declare
+{% endblock %}
+
+{% block content %}
+
+<section class="main">
+        <h4 style="border-bottom: 2px solid orange; " class="pb-2  text-info">Today Result Declare </h4>
+       
+
+        <form action="/DeclareResult" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" id="" class="form-control" value="{{dt.name}}" readonly><br>
+            {% if dt.OpenPanna == "" %}
+            <input type="text" name="openpanna" id="" class="form-control" placeholder="Enter Open Result" value="{{dt.OpenPanna}}"><br>
+            {% else %}
+            <input type="text" name="openpanna" id="" class="form-control" placeholder="Enter Open Result" value="{{dt.OpenPanna}}" ><br>
+            {% endif %}
+            {% if dt.ClosePanna == "" and dt.OpenPanna != "" %}
+            <input type="text" name="closepanna" id="" class="form-control" placeholder="Enter Close Reslut" value="{{dt.ClosePanna}}"><br>
+            {% else %}
+            <input type="text" name="closepanna" id="" class="form-control" placeholder="Enter Close Reslut" value="{{dt.ClosePanna}}" readonly> <br>
+            {% endif %}
+            {% if dt.JodiPanna == "" and dt.OpenPanna != "" %}
+            <input type="text" name="jodipanna" id="" class="form-control" placeholder="Enter Jodi Reslut" value="{{dt.JodiPanna}}"><br>
+            {% else %}
+            <input type="text" name="jodipanna" id="" class="form-control" placeholder="Enter Jodi Reslut" value="{{dt.JodiPanna}}" readonly><br>
+            {% endif %}
+            <button type="submit" class="btn btn-success">Declare Result</button>
+          </form>
+            
+          
+      
+    </section>
+    <script src="../static/adminpanel/adminhome.js"></script>
+
+
+    
+ 
+{% endblock %}

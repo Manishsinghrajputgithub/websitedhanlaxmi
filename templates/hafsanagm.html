@@ -1,0 +1,1021 @@
+
+<style>
+    .ic--baseline-delete {
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zM19 4h-3.5l-1-1h-5l-1 1H5v2h14z'/%3E%3C/svg%3E");
+}
+#w {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+
+#content {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 25px 20px;
+  padding-bottom: 35px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+}
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+
+#searchfield form {
+  display: inline-block;
+  background: #eeefed;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 0 0 0;
+}
+#searchfield form .biginput {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  background-color: #fff;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  color: #aeaeae;
+  font-weight:normal;
+  font-size: 1.5em;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+#searchfield form .biginput:focus {
+  color: #858585;
+}
+.flatbtn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  color: #f3faef;
+  text-decoration: none;
+  background-color: #6bb642;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 12px 22px 12px 22px;
+  line-height: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3);
+  -moz-box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3);
+  box-shadow: 0 1px 0 rgba(15, 15, 15, 0.3);
+}
+.flatbtn:hover {
+  color: #fff;
+  background-color: #73c437;
+}
+.flatbtn:active {
+  -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow:inset 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+</style>
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Satta App</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="180x180">
+  <link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="32x32" type="image/png">
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" />
+   
+</head>
+
+<body>
+  <div class="main-wrapper" id="body-pd">
+
+<!-- sidebar start -->
+<div class="sidenav d-flex flex-column justify-content-between" id="nav-bar">
+  <div class="sidebody">
+    <div class="sidebar-logo">
+      <a href="index.html" class="d-flex align-items-center">
+        <!-- <img src="assets/images/logo.png" alt="logo" width="70"> -->
+        <i class="ri-user-line me-2 " style="color: #ee4f00;"></i>
+        <div class="logo-info">
+          <h2 class="fw-bold fs-5 m-0" >{{client}}</h2>
+          <small class="m-0">{{client.mobile}}</small>
+        </div>
+      </a>
+    </div>
+    <ul class="sidebar-menu" id="nav_accordion">
+      <li class="nav-item">
+        <a href="/games">
+          <span class="mm-text dash-item"><i class="ri-home-4-line me-3 fs-2 " style="color: #ee4f00;"></i>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/myprofile">
+          <span class="mm-text dash-item"><i class="ri-user-line me-3 fs-2 " style="color: #ee4f00;"></i>My Profile</span>
+        </a>
+      </li>
+                <li class="nav-item">
+        <a href="/history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My History</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/bid-history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My Bid</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/payment">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>Payment Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/passbook">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Account Statement</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/gameprice">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Game Rates</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/howtoplay">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>How to Play</span>
+        </a>
+      </li>
+      
+                <li class="nav-item">
+        <a href="/privacypolicy">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Privacy Policy</span>
+        </a>
+      </li>
+                
+      <li class="nav-item">
+          <a href="/Elogout" ><span class="mm-text dash-item"><i class="ri-notification-line me-3 fs-2 " style="color: #ee4f00;"></i>Logout</span></a>
+                               
+        
+      </li>
+     
+    </ul>
+  </div>
+
+</div><!-- sidebar end -->
+
+<!-- main header start -->
+    <main class="fullheight bg-light">
+
+<!-- main header end -->
+        <div class="main-body">
+            <div class="home-wraper">
+                <div class="container">
+                    <form action="/sangambet" id="myform" method="POST">
+{% csrf_token %}            <input type="hidden" name="_token" value="kC5PLvUv6M9LXE4yqz4Vb9dL5RjSDZ8v1nkQdRpg"><div class="fxdsng sticky-top bg-white">
+  <div class="row gy-3 px-0">
+            <div class="col-sm-12 mb-2 mt-0 px-0">
+             <div class="bg-info shadow-sm px-3 py-2 d-flex align-items-center justify-content-between" style="background-color: #d0960e !important;">
+              <h5 class="fw-semibild m-0"><a href='/gametype{{name}}'><span class="ri-arrow-left-line me-3"></span></a>Half Sangam</h5>
+              <div class="wallet px-3 py-1 rounded-2 bg-white bg-opacity-50">
+              <i class="ri-wallet-3-line fs-6"></i> <span class="ms-2 fs-6">{{client.wallet}}</span>
+            </div>
+             </div>
+            </div>
+        </div>
+    
+            <input type="hidden" name="game_id" value="35"/>
+            <input type="hidden" name="pana" value="halfsangam"/>
+            <input type="hidden" name="page" value="hafsangam.html"/>
+            <input type="hidden" name="session" value=" "/>
+            <input type="hidden" name="game_name" value="{{name}}"/>
+            <input type="hidden" name="pana_name" value="Half Sangam"/>
+            <div class="row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-3 px-3">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+                <input type="text" readonly class="form-control w-auto" value="{% now "Y-m-d" %}">
+                  <input type="hidden"  class="form-control w-auto" name="bid_date" value="{{td}}">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-6 text-end">
+                    <button type="button" class="btn btn-info btnchange" data-flag="1" style="background-color: #d0960e !important;">Change</button>
+                </div>
+            </div>
+            <div id="message"></div>
+        <div class="form-group row px-3" id="open_panna">
+            <label class="col-md-3 col-5 pt-3">Open Panna</label>
+            <div class="col-md-9 col-7 mt-3">
+              <input type="number" name="closedigits" id="autocomplete" class="form-control biginput">
+            </div>
+            <label class="col-md-3 col-5 pt-3">Close Digit</label>
+            <div class="col-md-9 col-7 mt-3">
+              <input type="number"  name="digits" max="9" min="0" id="close_digit"  class="form-control digit">
+            </div>
+            <label class="col-md-3 col-5 pt-3">Points</label>
+            <div class="col-md-9 col-7 mt-3">
+              <input type="number" name="points" max="100000"  oninput="this.value=(parseInt(this.value)||'')" min="10" id="first_point" class="form-control point">
+            </div>
+        </div>
+        <div class="d-grid gap-2 col-4 mx-auto py-3">
+            <button type="submit" class="btn btn-info"   style="background-color: #d0960e !important;">Submit</button>
+        </div>
+                </div>
+        <div class="select-digit-wrap snank spb mt-4">
+          <div class="d-flex flex-column gap-4 px-0">
+            <div class="table-respoinsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    {% comment %} <th scope="col">Sangam</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Game Type</th>
+                    <th scope="col"></th> {% endcomment %}
+                  </tr>
+                </thead>
+                <tbody  class="tdata">
+                 
+                </tbody>
+              </table>
+              </div>
+          </div>
+
+          <div class="bibtn d-flex justify-content-center align-items-center py-2 fixed-bottom px-4 bg-light">
+                {% comment %} <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#submitpop" style="background-color: #d0960e !important;">Submit </button> {% endcomment %}
+                <!-- <button type="button" class="btn btn-primary">  Launch </button> -->
+            </div>
+        </div>
+    
+    <!-- modal-->
+<div class="modal fade" id="submitpop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header bg-info text-dark">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{name}} {{td}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Digits</th>
+                        <th>Points</th>
+                        <th>Game Type</th>
+                    </tr>
+                </thead>
+                <tbody class="tbdata">
+                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            <p>*Note Bid Once Played Will Not Be Cancelled*</p>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row tbldta gy-2">
+        <div id="bid"></div>
+          <div class="col-6">
+            <h6>Total Bids</h6>
+          </div>
+          <div class="col-6 text-end">
+            <h6 id="tbid">0</h6>
+          </div>
+          <div class="col-6">
+            <h6>Total Bid Amount</h6>
+          </div>
+          <div class="col-6 text-end">
+            <h6  id="tpoints">0</h6>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+          </div>
+          <div class="col-6 text-end">
+           <button type="submit" class="btn btn-info" onclick="this.form.submit();this.disabled = true;">Submit</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+                </div>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </main>
+  </div>
+
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/jquery.min.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/main.js"></script>
+    
+
+
+  
+        
+    
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+    
+  $(document).ready(function(){
+   
+    $('.btnadd').on('click',function(){
+        $('.bid').html("");
+        $('.digits').val("");
+    });
+  });
+  (function(e){"function"===typeof define&&define.amd?define(["jquery"],e):e(jQuery)})(function(e){function g(a,b){var c=function(){},c={autoSelectFirst:!1,appendTo:"body",serviceUrl:null,lookup:null,onSelect:null,width:"auto",minChars:1,maxHeight:300,deferRequestBy:0,params:{},formatResult:g.formatResult,delimiter:null,zIndex:9999,type:"GET",noCache:!1,onSearchStart:c,onSearchComplete:c,containerClass:"autocomplete-suggestions",tabDisabled:!1,dataType:"text",lookupFilter:function(a,b,c){return-1!==
+a.value.toLowerCase().indexOf(c)},paramName:"query",transformResult:function(a){return"string"===typeof a?e.parseJSON(a):a}};this.element=a;this.el=e(a);this.suggestions=[];this.badQueries=[];this.selectedIndex=-1;this.currentValue=this.element.value;this.intervalId=0;this.cachedResponse=[];this.onChange=this.onChangeInterval=null;this.isLocal=this.ignoreValueChange=!1;this.suggestionsContainer=null;this.options=e.extend({},c,b);this.classes={selected:"autocomplete-selected",suggestion:"autocomplete-suggestion"};
+this.initialize();this.setOptions(b)}var h={extend:function(a,b){return e.extend(a,b)},createNode:function(a){var b=document.createElement("div");b.innerHTML=a;return b.firstChild}};g.utils=h;e.Autocomplete=g;g.formatResult=function(a,b){var c="("+b.replace(RegExp("(\\/|\\.|\\*|\\+|\\?|\\||\\(|\\)|\\[|\\]|\\{|\\}|\\\\)","g"),"\\$1")+")";return a.value.replace(RegExp(c,"gi"),"<strong>$1</strong>")};g.prototype={killerFn:null,initialize:function(){var a=this,b="."+a.classes.suggestion,c=a.classes.selected,
+d=a.options,f;a.element.setAttribute("autocomplete","off");a.killerFn=function(b){0===e(b.target).closest("."+a.options.containerClass).length&&(a.killSuggestions(),a.disableKillerFn())};if(!d.width||"auto"===d.width)d.width=a.el.outerWidth();a.suggestionsContainer=g.utils.createNode('<div class="'+d.containerClass+'" style="position: absolute; display: none;"></div>');f=e(a.suggestionsContainer);f.appendTo(d.appendTo).width(d.width);f.on("mouseover.autocomplete",b,function(){a.activate(e(this).data("index"))});
+f.on("mouseout.autocomplete",function(){a.selectedIndex=-1;f.children("."+c).removeClass(c)});f.on("click.autocomplete",b,function(){a.select(e(this).data("index"),!1)});a.fixPosition();if(window.opera)a.el.on("keypress.autocomplete",function(b){a.onKeyPress(b)});else a.el.on("keydown.autocomplete",function(b){a.onKeyPress(b)});a.el.on("keyup.autocomplete",function(b){a.onKeyUp(b)});a.el.on("blur.autocomplete",function(){a.onBlur()});a.el.on("focus.autocomplete",function(){a.fixPosition()})},onBlur:function(){this.enableKillerFn()},
+setOptions:function(a){var b=this.options;h.extend(b,a);if(this.isLocal=e.isArray(b.lookup))b.lookup=this.verifySuggestionsFormat(b.lookup);e(this.suggestionsContainer).css({"max-height":b.maxHeight+"px",width:b.width+"px","z-index":b.zIndex})},clearCache:function(){this.cachedResponse=[];this.badQueries=[]},clear:function(){this.clearCache();this.currentValue=null;this.suggestions=[]},disable:function(){this.disabled=!0},enable:function(){this.disabled=!1},fixPosition:function(){var a;"body"===this.options.appendTo&&
+(a=this.el.offset(),e(this.suggestionsContainer).css({top:a.top+this.el.outerHeight()+"px",left:a.left+"px"}))},enableKillerFn:function(){e(document).on("click.autocomplete",this.killerFn)},disableKillerFn:function(){e(document).off("click.autocomplete",this.killerFn)},killSuggestions:function(){var a=this;a.stopKillSuggestions();a.intervalId=window.setInterval(function(){a.hide();a.stopKillSuggestions()},300)},stopKillSuggestions:function(){window.clearInterval(this.intervalId)},onKeyPress:function(a){if(!this.disabled&&
+!this.visible&&40===a.keyCode&&this.currentValue)this.suggest();else if(!this.disabled&&this.visible){switch(a.keyCode){case 27:this.el.val(this.currentValue);this.hide();break;case 9:case 13:if(-1===this.selectedIndex){this.hide();return}this.select(this.selectedIndex,13===a.keyCode);if(9===a.keyCode&&!1===this.options.tabDisabled)return;break;case 38:this.moveUp();break;case 40:this.moveDown();break;default:return}a.stopImmediatePropagation();a.preventDefault()}},onKeyUp:function(a){var b=this;
+if(!b.disabled){switch(a.keyCode){case 38:case 40:return}clearInterval(b.onChangeInterval);if(b.currentValue!==b.el.val())if(0<b.options.deferRequestBy)b.onChangeInterval=setInterval(function(){b.onValueChange()},b.options.deferRequestBy);else b.onValueChange()}},onValueChange:function(){var a;clearInterval(this.onChangeInterval);this.currentValue=this.element.value;a=this.getQuery(this.currentValue);this.selectedIndex=-1;this.ignoreValueChange?this.ignoreValueChange=!1:a.length<this.options.minChars?
+this.hide():this.getSuggestions(a)},getQuery:function(a){var b=this.options.delimiter;if(!b)return e.trim(a);a=a.split(b);return e.trim(a[a.length-1])},getSuggestionsLocal:function(a){var b=a.toLowerCase(),c=this.options.lookupFilter;return{suggestions:e.grep(this.options.lookup,function(d){return c(d,a,b)})}},getSuggestions:function(a){var b,c=this,d=c.options,f=d.serviceUrl;(b=c.isLocal?c.getSuggestionsLocal(a):c.cachedResponse[a])&&e.isArray(b.suggestions)?(c.suggestions=b.suggestions,c.suggest()):
+c.isBadQuery(a)||(d.params[d.paramName]=a,!1!==d.onSearchStart.call(c.element,d.params)&&(e.isFunction(d.serviceUrl)&&(f=d.serviceUrl.call(c.element,a)),e.ajax({url:f,data:d.ignoreParams?null:d.params,type:d.type,dataType:d.dataType}).done(function(b){c.processResponse(b,a);d.onSearchComplete.call(c.element,a)})))},isBadQuery:function(a){for(var b=this.badQueries,c=b.length;c--;)if(0===a.indexOf(b[c]))return!0;return!1},hide:function(){this.visible=!1;this.selectedIndex=-1;e(this.suggestionsContainer).hide()},
+suggest:function(){if(0===this.suggestions.length)this.hide();else{var a=this.options.formatResult,b=this.getQuery(this.currentValue),c=this.classes.suggestion,d=this.classes.selected,f=e(this.suggestionsContainer),g="";e.each(this.suggestions,function(d,e){g+='<div class="'+c+'" data-index="'+d+'">'+a(e,b)+"</div>"});f.html(g).show();this.visible=!0;this.options.autoSelectFirst&&(this.selectedIndex=0,f.children().first().addClass(d))}},verifySuggestionsFormat:function(a){return a.length&&"string"===
+typeof a[0]?e.map(a,function(a){return{value:a,data:null}}):a},processResponse:function(a,b){var c=this.options,d=c.transformResult(a,b);d.suggestions=this.verifySuggestionsFormat(d.suggestions);c.noCache||(this.cachedResponse[d[c.paramName]]=d,0===d.suggestions.length&&this.badQueries.push(d[c.paramName]));b===this.getQuery(this.currentValue)&&(this.suggestions=d.suggestions,this.suggest())},activate:function(a){var b=this.classes.selected,c=e(this.suggestionsContainer),d=c.children();c.children("."+
+b).removeClass(b);this.selectedIndex=a;return-1!==this.selectedIndex&&d.length>this.selectedIndex?(a=d.get(this.selectedIndex),e(a).addClass(b),a):null},select:function(a,b){var c=this.suggestions[a];c&&(this.el.val(c),this.ignoreValueChange=b,this.hide(),this.onSelect(a))},moveUp:function(){-1!==this.selectedIndex&&(0===this.selectedIndex?(e(this.suggestionsContainer).children().first().removeClass(this.classes.selected),this.selectedIndex=-1,this.el.val(this.currentValue)):this.adjustScroll(this.selectedIndex-
+1))},moveDown:function(){this.selectedIndex!==this.suggestions.length-1&&this.adjustScroll(this.selectedIndex+1)},adjustScroll:function(a){var b=this.activate(a),c,d;b&&(b=b.offsetTop,c=e(this.suggestionsContainer).scrollTop(),d=c+this.options.maxHeight-25,b<c?e(this.suggestionsContainer).scrollTop(b):b>d&&e(this.suggestionsContainer).scrollTop(b-this.options.maxHeight+25),this.el.val(this.getValue(this.suggestions[a].value)))},onSelect:function(a){var b=this.options.onSelect;a=this.suggestions[a];
+this.el.val(this.getValue(a.value));e.isFunction(b)&&b.call(this.element,a)},getValue:function(a){var b=this.options.delimiter,c;if(!b)return a;c=this.currentValue;b=c.split(b);return 1===b.length?a:c.substr(0,c.length-b[b.length-1].length)+a},dispose:function(){this.el.off(".autocomplete").removeData("autocomplete");this.disableKillerFn();e(this.suggestionsContainer).remove()}};e.fn.autocomplete=function(a,b){return 0===arguments.length?this.first().data("autocomplete"):this.each(function(){var c=
+e(this),d=c.data("autocomplete");if("string"===typeof a){if(d&&"function"===typeof d[a])d[a](b)}else d&&d.dispose&&d.dispose(),d=new g(this,a),c.data("autocomplete",d)})}});
+
+$(function(){
+  var currencies = [
+            { value: '000', data: '000' },
+            { value: '100', data: '100' },
+            { value: '110', data: '110' },
+            { value: '111', data: '111' },
+            { value: '112', data: '112' },
+            { value: '113', data: '113' },
+            { value: '114', data: '114' },
+            { value: '115', data: '115' },
+            { value: '116', data: '116' },
+            { value: '117', data: '117' },
+            { value: '118', data: '118' },
+            { value: '119', data: '119' },
+            { value: '120', data: '120' },
+            { value: '122', data: '122' },
+            { value: '123', data: '123' },
+            { value: '124', data: '124' },
+            { value: '125', data: '125' },
+            { value: '126', data: '126' },
+            { value: '127', data: '127' },
+            { value: '128', data: '128' },
+            { value: '129', data: '129' },
+            { value: '130', data: '130' },
+            { value: '133', data: '133' },
+            { value: '134', data: '134' },
+            { value: '135', data: '135' },
+            { value: '136', data: '136' },
+            { value: '137', data: '137' },
+            { value: '138', data: '138' },
+            { value: '139', data: '139' },
+            { value: '140', data: '140' },
+            { value: '144', data: '144' },
+            { value: '145', data: '145' },
+            { value: '146', data: '146' },
+            { value: '147', data: '147' },
+            { value: '148', data: '148' },
+            { value: '149', data: '149' },
+            { value: '150', data: '150' },
+            { value: '155', data: '155' },
+            { value: '156', data: '156' },
+            { value: '157', data: '157' },
+            { value: '158', data: '158' },
+            { value: '159', data: '159' },
+            { value: '160', data: '160' },
+            { value: '166', data: '166' },
+            { value: '167', data: '167' },
+            { value: '168', data: '168' },
+            { value: '169', data: '169' },
+            { value: '170', data: '170' },
+            { value: '177', data: '177' },
+            { value: '178', data: '178' },
+            { value: '179', data: '179' },
+            { value: '180', data: '180' },
+            { value: '188', data: '188' },
+            { value: '189', data: '189' },
+            { value: '190', data: '190' },
+            { value: '199', data: '199' },
+            { value: '200', data: '200' },
+            { value: '220', data: '220' },
+            { value: '222', data: '222' },
+            { value: '223', data: '223' },
+            { value: '224', data: '224' },
+            { value: '225', data: '225' },
+            { value: '226', data: '226' },
+            { value: '227', data: '227' },
+            { value: '228', data: '228' },
+            { value: '229', data: '229' },
+            { value: '230', data: '230' },
+            { value: '233', data: '233' },
+            { value: '234', data: '234' },
+            { value: '235', data: '235' },
+            { value: '236', data: '236' },
+            { value: '237', data: '237' },
+            { value: '238', data: '238' },
+            { value: '239', data: '239' },
+            { value: '240', data: '240' },
+            { value: '244', data: '244' },
+            { value: '245', data: '245' },
+            { value: '246', data: '246' },
+            { value: '247', data: '247' },
+            { value: '248', data: '248' },
+            { value: '249', data: '249' },
+            { value: '250', data: '250' },
+            { value: '255', data: '255' },
+            { value: '256', data: '256' },
+            { value: '257', data: '257' },
+            { value: '258', data: '258' },
+            { value: '259', data: '259' },
+            { value: '260', data: '260' },
+            { value: '255', data: '255' },
+            { value: '256', data: '256' },
+            { value: '257', data: '257' },
+            { value: '258', data: '258' },
+            { value: '259', data: '259' },
+            { value: '260', data: '260' },
+            { value: '277', data: '277' },
+            { value: '278', data: '278' },
+            { value: '279', data: '279' },
+            { value: '280', data: '280' },
+            { value: '288', data: '288' },
+            { value: '289', data: '289' },
+            { value: '290', data: '290' },
+            { value: '299', data: '299' },
+            { value: '300', data: '300' },
+            { value: '330', data: '330' },
+            { value: '333', data: '333' },
+            { value: '334', data: '334' },
+            { value: '335', data: '335' },
+            { value: '336', data: '336' },
+            { value: '337', data: '337' },
+            { value: '338', data: '338' },
+            { value: '339', data: '339' },
+            { value: '340', data: '340' },
+            { value: '344', data: '344' },
+            { value: '345', data: '345' },
+            { value: '346', data: '346' },
+            { value: '347', data: '347' },
+            { value: '348', data: '348' },
+            { value: '349', data: '349' },
+            { value: '350', data: '350' },
+            { value: '355', data: '355' },
+            { value: '356', data: '356' },
+            { value: '357', data: '357' },
+            { value: '358', data: '358' },
+            { value: '359', data: '359' },
+            { value: '360', data: '360' },
+            { value: '366', data: '366' },
+            { value: '367', data: '367' },
+            { value: '368', data: '368' },
+            { value: '369', data: '369' },
+            { value: '370', data: '370' },
+            { value: '377', data: '377' },
+            { value: '378', data: '378' },
+            { value: '379', data: '379' },
+            { value: '380', data: '380' },
+            { value: '388', data: '388' },
+            { value: '389', data: '389' },
+            { value: '390', data: '390' },
+            { value: '388', data: '388' },
+            { value: '389', data: '389' },
+            { value: '390', data: '390' },
+            { value: '440', data: '440' },
+            { value: '444', data: '444' },
+            { value: '445', data: '445' },
+            { value: '446', data: '446' },
+            { value: '447', data: '447' },
+            { value: '448', data: '448' },
+            { value: '449', data: '449' },
+            { value: '450', data: '450' },
+            { value: '455', data: '455' },
+            { value: '456', data: '456' },
+            { value: '457', data: '457' },
+            { value: '458', data: '458' },
+            { value: '459', data: '459' },
+            { value: '460', data: '460' },
+            { value: '466', data: '466' },
+            { value: '467', data: '467' },
+            { value: '468', data: '468' },
+            { value: '469', data: '469' },
+            { value: '470', data: '470' },
+            { value: '477', data: '477' },
+            { value: '478', data: '478' },
+            { value: '479', data: '479' },
+            { value: '480', data: '480' },
+            { value: '488', data: '488' },
+            { value: '489', data: '489' },
+            { value: '490', data: '490' },
+            { value: '499', data: '499' },
+            { value: '500', data: '500' },
+            { value: '550', data: '550' },
+            { value: '555', data: '555' },
+            { value: '556', data: '556' },
+            { value: '557', data: '557' },
+            { value: '558', data: '558' },
+            { value: '559', data: '559' },
+            { value: '560', data: '560' },
+            { value: '566', data: '566' },
+            { value: '567', data: '567' },
+            { value: '568', data: '568' },
+            { value: '569', data: '569' },
+            { value: '570', data: '570' },
+            { value: '577', data: '577' },
+            { value: '578', data: '578' },
+            { value: '579', data: '579' },
+            { value: '580', data: '580' },
+            { value: '588', data: '588' },
+            { value: '589', data: '589' },
+            { value: '590', data: '590' },
+            { value: '599', data: '599' },
+            { value: '600', data: '600' },
+            { value: '660', data: '660' },
+            { value: '666', data: '666' },
+            { value: '667', data: '667' },
+            { value: '668', data: '668' },
+            { value: '669', data: '669' },
+            { value: '670', data: '670' },
+            { value: '677', data: '677' },
+            { value: '678', data: '678' },
+            { value: '679', data: '679' },
+            { value: '680', data: '680' },
+            { value: '688', data: '688' },
+            { value: '689', data: '689' },
+            { value: '690', data: '690' },
+            { value: '699', data: '699' },
+            { value: '700', data: '700' },
+            { value: '770', data: '770' },
+            { value: '777', data: '777' },
+            { value: '778', data: '778' },
+            { value: '779', data: '779' },
+            { value: '780', data: '780' },
+            { value: '799', data: '799' },
+            { value: '800', data: '800' },
+            { value: '880', data: '880' },
+            { value: '888', data: '888' },
+            { value: '889', data: '889' },
+            { value: '890', data: '890' },
+            { value: '899', data: '899' },
+            { value: '900', data: '900' },
+            { value: '990', data: '990' },
+            { value: '999', data: '999' },
+      ];
+  
+  // setup autocomplete function pulling from currencies[] array
+  $('#autocomplete').autocomplete({
+    lookup: currencies,
+    onSelect: function (suggestion) {
+      var thehtml = '<strong>Currency Name:</strong> ' + suggestion.value + ' <br> <strong>Symbol:</strong> ' + suggestion.data;
+      $('#outputcontent').html(thehtml);
+    }
+  });
+  
+
+});
+
+(function(e){"function"===typeof define&&define.amd?define(["jquery"],e):e(jQuery)})(function(e){function g(a,b){var c=function(){},c={autoSelectFirst:!1,appendTo:"body",serviceUrl:null,lookup:null,onSelect:null,width:"auto",minChars:1,maxHeight:300,deferRequestBy:0,params:{},formatResult:g.formatResult,delimiter:null,zIndex:9999,type:"GET",noCache:!1,onSearchStart:c,onSearchComplete:c,containerClass:"autocompleteclose-suggestions",tabDisabled:!1,dataType:"text",lookupFilter:function(a,b,c){return-1!==
+a.value.toLowerCase().indexOf(c)},paramName:"query",transformResult:function(a){return"string"===typeof a?e.parseJSON(a):a}};this.element=a;this.el=e(a);this.suggestions=[];this.badQueries=[];this.selectedIndex=-1;this.currentValue=this.element.value;this.intervalId=0;this.cachedResponse=[];this.onChange=this.onChangeInterval=null;this.isLocal=this.ignoreValueChange=!1;this.suggestionsContainer=null;this.options=e.extend({},c,b);this.classes={selected:"autocompleteclose-selected",suggestion:"autocompleteclose-suggestion"};
+this.initialize();this.setOptions(b)}var h={extend:function(a,b){return e.extend(a,b)},createNode:function(a){var b=document.createElement("div");b.innerHTML=a;return b.firstChild}};g.utils=h;e.autocompleteclose=g;g.formatResult=function(a,b){var c="("+b.replace(RegExp("(\\/|\\.|\\*|\\+|\\?|\\||\\(|\\)|\\[|\\]|\\{|\\}|\\\\)","g"),"\\$1")+")";return a.value.replace(RegExp(c,"gi"),"<strong>$1</strong>")};g.prototype={killerFn:null,initialize:function(){var a=this,b="."+a.classes.suggestion,c=a.classes.selected,
+d=a.options,f;a.element.setAttribute("autocompleteclose","off");a.killerFn=function(b){0===e(b.target).closest("."+a.options.containerClass).length&&(a.killSuggestions(),a.disableKillerFn())};if(!d.width||"auto"===d.width)d.width=a.el.outerWidth();a.suggestionsContainer=g.utils.createNode('<div class="'+d.containerClass+'" style="position: absolute; display: none;"></div>');f=e(a.suggestionsContainer);f.appendTo(d.appendTo).width(d.width);f.on("mouseover.autocompleteclose",b,function(){a.activate(e(this).data("index"))});
+f.on("mouseout.autocompleteclose",function(){a.selectedIndex=-1;f.children("."+c).removeClass(c)});f.on("click.autocompleteclose",b,function(){a.select(e(this).data("index"),!1)});a.fixPosition();if(window.opera)a.el.on("keypress.autocompleteclose",function(b){a.onKeyPress(b)});else a.el.on("keydown.autocompleteclose",function(b){a.onKeyPress(b)});a.el.on("keyup.autocompleteclose",function(b){a.onKeyUp(b)});a.el.on("blur.autocompleteclose",function(){a.onBlur()});a.el.on("focus.autocompleteclose",function(){a.fixPosition()})},onBlur:function(){this.enableKillerFn()},
+setOptions:function(a){var b=this.options;h.extend(b,a);if(this.isLocal=e.isArray(b.lookup))b.lookup=this.verifySuggestionsFormat(b.lookup);e(this.suggestionsContainer).css({"max-height":b.maxHeight+"px",width:b.width+"px","z-index":b.zIndex})},clearCache:function(){this.cachedResponse=[];this.badQueries=[]},clear:function(){this.clearCache();this.currentValue=null;this.suggestions=[]},disable:function(){this.disabled=!0},enable:function(){this.disabled=!1},fixPosition:function(){var a;"body"===this.options.appendTo&&
+(a=this.el.offset(),e(this.suggestionsContainer).css({top:a.top+this.el.outerHeight()+"px",left:a.left+"px"}))},enableKillerFn:function(){e(document).on("click.autocompleteclose",this.killerFn)},disableKillerFn:function(){e(document).off("click.autocompleteclose",this.killerFn)},killSuggestions:function(){var a=this;a.stopKillSuggestions();a.intervalId=window.setInterval(function(){a.hide();a.stopKillSuggestions()},300)},stopKillSuggestions:function(){window.clearInterval(this.intervalId)},onKeyPress:function(a){if(!this.disabled&&
+!this.visible&&40===a.keyCode&&this.currentValue)this.suggest();else if(!this.disabled&&this.visible){switch(a.keyCode){case 27:this.el.val(this.currentValue);this.hide();break;case 9:case 13:if(-1===this.selectedIndex){this.hide();return}this.select(this.selectedIndex,13===a.keyCode);if(9===a.keyCode&&!1===this.options.tabDisabled)return;break;case 38:this.moveUp();break;case 40:this.moveDown();break;default:return}a.stopImmediatePropagation();a.preventDefault()}},onKeyUp:function(a){var b=this;
+if(!b.disabled){switch(a.keyCode){case 38:case 40:return}clearInterval(b.onChangeInterval);if(b.currentValue!==b.el.val())if(0<b.options.deferRequestBy)b.onChangeInterval=setInterval(function(){b.onValueChange()},b.options.deferRequestBy);else b.onValueChange()}},onValueChange:function(){var a;clearInterval(this.onChangeInterval);this.currentValue=this.element.value;a=this.getQuery(this.currentValue);this.selectedIndex=-1;this.ignoreValueChange?this.ignoreValueChange=!1:a.length<this.options.minChars?
+this.hide():this.getSuggestions(a)},getQuery:function(a){var b=this.options.delimiter;if(!b)return e.trim(a);a=a.split(b);return e.trim(a[a.length-1])},getSuggestionsLocal:function(a){var b=a.toLowerCase(),c=this.options.lookupFilter;return{suggestions:e.grep(this.options.lookup,function(d){return c(d,a,b)})}},getSuggestions:function(a){var b,c=this,d=c.options,f=d.serviceUrl;(b=c.isLocal?c.getSuggestionsLocal(a):c.cachedResponse[a])&&e.isArray(b.suggestions)?(c.suggestions=b.suggestions,c.suggest()):
+c.isBadQuery(a)||(d.params[d.paramName]=a,!1!==d.onSearchStart.call(c.element,d.params)&&(e.isFunction(d.serviceUrl)&&(f=d.serviceUrl.call(c.element,a)),e.ajax({url:f,data:d.ignoreParams?null:d.params,type:d.type,dataType:d.dataType}).done(function(b){c.processResponse(b,a);d.onSearchComplete.call(c.element,a)})))},isBadQuery:function(a){for(var b=this.badQueries,c=b.length;c--;)if(0===a.indexOf(b[c]))return!0;return!1},hide:function(){this.visible=!1;this.selectedIndex=-1;e(this.suggestionsContainer).hide()},
+suggest:function(){if(0===this.suggestions.length)this.hide();else{var a=this.options.formatResult,b=this.getQuery(this.currentValue),c=this.classes.suggestion,d=this.classes.selected,f=e(this.suggestionsContainer),g="";e.each(this.suggestions,function(d,e){g+='<div class="'+c+'" data-index="'+d+'">'+a(e,b)+"</div>"});f.html(g).show();this.visible=!0;this.options.autoSelectFirst&&(this.selectedIndex=0,f.children().first().addClass(d))}},verifySuggestionsFormat:function(a){return a.length&&"string"===
+typeof a[0]?e.map(a,function(a){return{value:a,data:null}}):a},processResponse:function(a,b){var c=this.options,d=c.transformResult(a,b);d.suggestions=this.verifySuggestionsFormat(d.suggestions);c.noCache||(this.cachedResponse[d[c.paramName]]=d,0===d.suggestions.length&&this.badQueries.push(d[c.paramName]));b===this.getQuery(this.currentValue)&&(this.suggestions=d.suggestions,this.suggest())},activate:function(a){var b=this.classes.selected,c=e(this.suggestionsContainer),d=c.children();c.children("."+
+b).removeClass(b);this.selectedIndex=a;return-1!==this.selectedIndex&&d.length>this.selectedIndex?(a=d.get(this.selectedIndex),e(a).addClass(b),a):null},select:function(a,b){var c=this.suggestions[a];c&&(this.el.val(c),this.ignoreValueChange=b,this.hide(),this.onSelect(a))},moveUp:function(){-1!==this.selectedIndex&&(0===this.selectedIndex?(e(this.suggestionsContainer).children().first().removeClass(this.classes.selected),this.selectedIndex=-1,this.el.val(this.currentValue)):this.adjustScroll(this.selectedIndex-
+1))},moveDown:function(){this.selectedIndex!==this.suggestions.length-1&&this.adjustScroll(this.selectedIndex+1)},adjustScroll:function(a){var b=this.activate(a),c,d;b&&(b=b.offsetTop,c=e(this.suggestionsContainer).scrollTop(),d=c+this.options.maxHeight-25,b<c?e(this.suggestionsContainer).scrollTop(b):b>d&&e(this.suggestionsContainer).scrollTop(b-this.options.maxHeight+25),this.el.val(this.getValue(this.suggestions[a].value)))},onSelect:function(a){var b=this.options.onSelect;a=this.suggestions[a];
+this.el.val(this.getValue(a.value));e.isFunction(b)&&b.call(this.element,a)},getValue:function(a){var b=this.options.delimiter,c;if(!b)return a;c=this.currentValue;b=c.split(b);return 1===b.length?a:c.substr(0,c.length-b[b.length-1].length)+a},dispose:function(){this.el.off(".autocompleteclose").removeData("autocompleteclose");this.disableKillerFn();e(this.suggestionsContainer).remove()}};e.fn.autocompleteclose=function(a,b){return 0===arguments.length?this.first().data("autocompleteclose"):this.each(function(){var c=
+e(this),d=c.data("autocompleteclose");if("string"===typeof a){if(d&&"function"===typeof d[a])d[a](b)}else d&&d.dispose&&d.dispose(),d=new g(this,a),c.data("autocompleteclose",d)})}});
+
+$(function(){
+  var currencies = [
+            { value: '000', data: '000' },
+            { value: '100', data: '100' },
+            { value: '110', data: '110' },
+            { value: '111', data: '111' },
+            { value: '112', data: '112' },
+            { value: '113', data: '113' },
+            { value: '114', data: '114' },
+            { value: '115', data: '115' },
+            { value: '116', data: '116' },
+            { value: '117', data: '117' },
+            { value: '118', data: '118' },
+            { value: '119', data: '119' },
+            { value: '120', data: '120' },
+            { value: '122', data: '122' },
+            { value: '123', data: '123' },
+            { value: '124', data: '124' },
+            { value: '125', data: '125' },
+            { value: '126', data: '126' },
+            { value: '127', data: '127' },
+            { value: '128', data: '128' },
+            { value: '129', data: '129' },
+            { value: '130', data: '130' },
+            { value: '133', data: '133' },
+            { value: '134', data: '134' },
+            { value: '135', data: '135' },
+            { value: '136', data: '136' },
+            { value: '137', data: '137' },
+            { value: '138', data: '138' },
+            { value: '139', data: '139' },
+            { value: '140', data: '140' },
+            { value: '144', data: '144' },
+            { value: '145', data: '145' },
+            { value: '146', data: '146' },
+            { value: '147', data: '147' },
+            { value: '148', data: '148' },
+            { value: '149', data: '149' },
+            { value: '150', data: '150' },
+            { value: '155', data: '155' },
+            { value: '156', data: '156' },
+            { value: '157', data: '157' },
+            { value: '158', data: '158' },
+            { value: '159', data: '159' },
+            { value: '160', data: '160' },
+            { value: '166', data: '166' },
+            { value: '167', data: '167' },
+            { value: '168', data: '168' },
+            { value: '169', data: '169' },
+            { value: '170', data: '170' },
+            { value: '177', data: '177' },
+            { value: '178', data: '178' },
+            { value: '179', data: '179' },
+            { value: '180', data: '180' },
+            { value: '188', data: '188' },
+            { value: '189', data: '189' },
+            { value: '190', data: '190' },
+            { value: '199', data: '199' },
+            { value: '200', data: '200' },
+            { value: '220', data: '220' },
+            { value: '222', data: '222' },
+            { value: '223', data: '223' },
+            { value: '224', data: '224' },
+            { value: '225', data: '225' },
+            { value: '226', data: '226' },
+            { value: '227', data: '227' },
+            { value: '228', data: '228' },
+            { value: '229', data: '229' },
+            { value: '230', data: '230' },
+            { value: '233', data: '233' },
+            { value: '234', data: '234' },
+            { value: '235', data: '235' },
+            { value: '236', data: '236' },
+            { value: '237', data: '237' },
+            { value: '238', data: '238' },
+            { value: '239', data: '239' },
+            { value: '240', data: '240' },
+            { value: '244', data: '244' },
+            { value: '245', data: '245' },
+            { value: '246', data: '246' },
+            { value: '247', data: '247' },
+            { value: '248', data: '248' },
+            { value: '249', data: '249' },
+            { value: '250', data: '250' },
+            { value: '255', data: '255' },
+            { value: '256', data: '256' },
+            { value: '257', data: '257' },
+            { value: '258', data: '258' },
+            { value: '259', data: '259' },
+            { value: '260', data: '260' },
+            { value: '266', data: '266' },
+            { value: '267', data: '267' },
+            { value: '268', data: '268' },
+            { value: '269', data: '269' },
+            { value: '270', data: '270' },
+            { value: '277', data: '277' },
+            { value: '278', data: '278' },
+            { value: '279', data: '279' },
+            { value: '280', data: '280' },
+            { value: '288', data: '288' },
+            { value: '289', data: '289' },
+            { value: '290', data: '290' },
+            { value: '299', data: '299' },
+            { value: '300', data: '300' },
+            { value: '330', data: '330' },
+            { value: '333', data: '333' },
+            { value: '334', data: '334' },
+            { value: '335', data: '335' },
+            { value: '336', data: '336' },
+            { value: '337', data: '337' },
+            { value: '338', data: '338' },
+            { value: '339', data: '339' },
+            { value: '340', data: '340' },
+            { value: '344', data: '344' },
+            { value: '345', data: '345' },
+            { value: '346', data: '346' },
+            { value: '347', data: '347' },
+            { value: '348', data: '348' },
+            { value: '349', data: '349' },
+            { value: '350', data: '350' },
+            { value: '355', data: '355' },
+            { value: '356', data: '356' },
+            { value: '357', data: '357' },
+            { value: '358', data: '358' },
+            { value: '359', data: '359' },
+            { value: '360', data: '360' },
+            { value: '366', data: '366' },
+            { value: '367', data: '367' },
+            { value: '368', data: '368' },
+            { value: '369', data: '369' },
+            { value: '370', data: '370' },
+            { value: '377', data: '377' },
+            { value: '378', data: '378' },
+            { value: '379', data: '379' },
+            { value: '380', data: '380' },
+            { value: '388', data: '388' },
+            { value: '389', data: '389' },
+            { value: '390', data: '390' },
+            { value: '399', data: '399' },
+            { value: '400', data: '400' },
+            { value: '440', data: '440' },
+            { value: '444', data: '444' },
+            { value: '445', data: '445' },
+            { value: '446', data: '446' },
+            { value: '447', data: '447' },
+            { value: '448', data: '448' },
+            { value: '449', data: '449' },
+            { value: '450', data: '450' },
+            { value: '455', data: '455' },
+            { value: '456', data: '456' },
+            { value: '457', data: '457' },
+            { value: '458', data: '458' },
+            { value: '459', data: '459' },
+            { value: '460', data: '460' },
+            { value: '466', data: '466' },
+            { value: '467', data: '467' },
+            { value: '468', data: '468' },
+            { value: '469', data: '469' },
+            { value: '470', data: '470' },
+            { value: '477', data: '477' },
+            { value: '478', data: '478' },
+            { value: '479', data: '479' },
+            { value: '480', data: '480' },
+            { value: '488', data: '488' },
+            { value: '489', data: '489' },
+            { value: '490', data: '490' },
+            { value: '499', data: '499' },
+            { value: '500', data: '500' },
+            { value: '550', data: '550' },
+            { value: '555', data: '555' },
+            { value: '556', data: '556' },
+            { value: '557', data: '557' },
+            { value: '558', data: '558' },
+            { value: '559', data: '559' },
+            { value: '560', data: '560' },
+            { value: '566', data: '566' },
+            { value: '567', data: '567' },
+            { value: '568', data: '568' },
+            { value: '569', data: '569' },
+            { value: '570', data: '570' },
+            { value: '577', data: '577' },
+            { value: '578', data: '578' },
+            { value: '579', data: '579' },
+            { value: '580', data: '580' },
+            { value: '588', data: '588' },
+            { value: '589', data: '589' },
+            { value: '590', data: '590' },
+            { value: '599', data: '599' },
+            { value: '600', data: '600' },
+            { value: '660', data: '660' },
+            { value: '666', data: '666' },
+            { value: '667', data: '667' },
+            { value: '668', data: '668' },
+            { value: '669', data: '669' },
+            { value: '670', data: '670' },
+            { value: '677', data: '677' },
+            { value: '678', data: '678' },
+            { value: '679', data: '679' },
+            { value: '680', data: '680' },
+            { value: '688', data: '688' },
+            { value: '689', data: '689' },
+            { value: '690', data: '690' },
+            { value: '699', data: '699' },
+            { value: '700', data: '700' },
+            { value: '770', data: '770' },
+            { value: '777', data: '777' },
+            { value: '778', data: '778' },
+            { value: '779', data: '779' },
+            { value: '780', data: '780' },
+            { value: '788', data: '788' },
+            { value: '789', data: '789' },
+            { value: '790', data: '790' },
+            { value: '799', data: '799' },
+            { value: '800', data: '800' },
+            { value: '880', data: '880' },
+            { value: '888', data: '888' },
+            { value: '889', data: '889' },
+            { value: '890', data: '890' },
+            { value: '899', data: '899' },
+            { value: '900', data: '900' },
+            { value: '990', data: '990' },
+            { value: '999', data: '999' },
+      ];
+  
+  // setup autocompleteclose function pulling from currencies[] array
+  $('#autocompleteclose').autocomplete({
+    lookup: currencies,
+    onSelect: function (suggestion) {
+      var thehtml = '<strong>Currency Name:</strong> ' + suggestion.value + ' <br> <strong>Symbol:</strong> ' + suggestion.data;
+      $('#outputcontent').html(thehtml);
+    }
+  });
+  
+
+});
+</script>
+<script>
+  $(document).ready(function(){
+    $('.btnchange').on('click',function(){
+      var flag=$(this).data("flag");
+      $("#autocomplete").val('');
+      $("#autocompleteclose").val('');
+      $("#first_points").val('');
+      $("#second_points").val('');
+      $("#open_digit").val('');
+      $("#close_digit").val('');
+      if(flag=="1"){
+        $("#open_panna").hide();
+        $("#close_panna").show();
+        $(this).data("flag","2");
+        $('.btnadd').data("flag","2");
+      }else{
+        $("#close_panna").hide();
+        $("#open_panna").show();
+        $(this).data("flag","1");
+        $('.btnadd').data("flag","1");
+      }
+    });
+  });
+</script>
+<script>
+   $(document).ready(function() {
+  $('.digit').on('change', function(){
+        this.value = this.value.replace(/[^0-9]/g, '');
+        if(!(parseInt($(this).val())>=0 && parseInt($(this).val())<=9)){
+          $(this).val('0');
+        }
+  });
+});
+$(document).ready(function() {
+  $('.point').on('change', function(){
+      var min=$(this).attr('min');
+      var max=$(this).attr('max');
+        if(!(parseInt($(this).val())>=min && parseInt($(this).val())<=max)){
+          $(this).val(min);
+          $('#message').html(
+                                '<div class="alert alert-danger alert-dismissable">Please enter min '+min+' to '+max+' Points!</div>'
+                                );
+                                setTimeout(function(){
+                                $(".alert-danger").hide();
+                            }, 5000);
+        }
+  });
+});
+</script>
+<script>
+    $(document).ready(function() {
+            $('.btnadd').on('click',function(e){
+                // console.log('dfas');
+                
+                var flag = $(".deletebtn:last").data("id");
+               if(!flag){ flag=0; }
+                var check = $(this).data("flag");
+                if(check=="1"){
+                  var digits=$("#autocomplete").val();
+                  var closedigits=$("#close_digit").val();
+                  var points=parseInt($("#first_point").val());
+                  var cpoints=$("#first_point").val();
+                  var session = "open";
+                }else{
+                  var digits=$("#open_digit").val();
+                  var closedigits=$("#autocompleteclose").val();
+                  var points=parseInt($("#second_point").val());
+                  var cpoints=$("#second_point").val();
+                  var session = "close";
+                }
+                console.log(points);
+                if(digits!='' && closedigits!='' && cpoints!=''){
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                e.preventDefault();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                type:'POST',
+                url:'https://dpboss777.co.in/ajax-half-sangam',
+                data: {digits:digits, _token:_token,closedigits:closedigits,points:points,flag:flag,session:session},
+                success:function(data) {
+                    // return response()->json(['success' => 'Added new student']);
+                    
+                    if($.isEmptyObject(data.error)){
+                        if(data.success==true){
+                            $(".print-error-msg").find("ul").html('');
+                            $("#autocomplete").val('');
+                            $("#autocompleteclose").val('');
+                            $("#close_digit").val('');
+                            $("#open_digit").val('');
+                            $("#first_point").val('');
+                            $("#second_point").val('');
+                            $('.tdata').append(data.thtml);
+                            $('.tbdata').append(data.html);
+                            var bids=parseInt($('#tbid').html())+1;
+                            var point=parseInt($('#tpoints').html())+points;
+                            $('#tbid').html(bids);
+                            $('#tpoints').html(point);
+                            $('#bid').append(data.bid);
+                        }
+                    }else{
+                        $("#autocomplete").val('');
+                        $("#autocompleteclose").val('');
+                        $("#points").val('');
+                        printErrorMsg(data.error);
+                    }
+                }
+                });
+              }else{
+                $('#message').html(
+                                '<div class="alert alert-danger alert-dismissable">Please Fill all details!</div>'
+                                );
+                                setTimeout(function(){
+                                $(".alert-danger").hide();
+                            }, 5000);
+              }
+            });
+            function printErrorMsg (msg) {
+                $(".print-error-msg").find("ul").html('');
+                $(".print-error-msg").css('display','block');
+                $.each( msg, function( key, value ) {
+                    $(".print-error-msg").find("ul").append('<li>'+value+'</li>');
+                });
+            }
+            $(document).on('click','.deletebtn', function(){
+              var id=$(this).data('id');
+              var point=parseInt($(this).data('point'));
+              $('.delete'+id).remove();
+              var tbid=parseInt($('#tbid').html())-1;
+              var tpoints=parseInt($('#tpoints').html())-point;
+              
+              $('#tbid').html(tbid);
+              $('#tpoints').html(tpoints);
+              console.log(tpoints);
+            });
+        });
+      </script>
+      <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+      <script>
+         {% if message  %}
+         alertify.set('notifier','position', 'top-right');
+         alertify.success('{{message}}' );
+         {% endif %}
+       </script>   
+    
+
+</body>
+
+</html>

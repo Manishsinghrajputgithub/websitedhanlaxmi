@@ -1,0 +1,64 @@
+
+
+{% extends "link.html" %}
+{% load static %}
+
+{% block content %}
+<div class="main-wrapper" id="body-pd" >
+    <!-- main header end -->
+          <div class="main-body  vh-100" style="background-image: url(https://images.pexels.com/photos/2680270/pexels-photo-2680270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+            <div class="login-wraper py-5 px-3">
+              <div class="row justify-content-center">
+                <div class="col-sm-7">
+                 <div class=" rounded-2  p-md-5 p-4">
+                  <form  method="POST" action="/createAc"  class="d-flex flex-column gap-4">
+                    {% csrf_token %}
+                  <input type="hidden" name="_token" value="i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ">                <div class="logo-wrap text-center">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" alt="logo" style="border-radius: 100%;" class="img-fluid w-25">
+                      <h3 class="fw-semibold mt-3 text-white">Sign Up</h3>
+                      {{message}}
+                    </div>
+                    <div class="input-field">
+                      <div class="input-group h-100">
+                        <span class="input-group-text ri-user-line text-dark"></span>
+                        <input id="name" type="text" class="form-control " placeholder="Name" name="usernm" value="" required autocomplete="name" autofocus>
+                                              </div>
+                    </div>
+                    
+                    <div class="input-field">
+                      <div class="input-group h-100">
+                        <span class="input-group-text ri-lock-fill text-dark"></span>
+                        <input id="contact_no" type="number" class="form-control "  placeholder="Mobile Number(Login Id)"  name="contact_no" value="" required autocomplete="contact_no">
+                            <i class="far fa-envelope"></i>
+                                              </div>
+                    </div>
+                    <div class="input-field">
+                      <div class="input-group h-100">
+                        <span class="input-group-text ri-lock-fill text-dark"></span>
+                        <input id="password" type="password" class="form-control " placeholder="Password"  name="password" required autocomplete="current-password">
+                            <i class="fas fa-lock"></i>
+                                              </div>
+                    </div>
+                    <div class="input-field">
+                      <div class="input-group h-100">
+                        <span class="input-group-text ri-lock-fill text-dark"></span>
+                        <input id="password_confirmation" type="password" class="form-control " placeholder="Confirm Password"  name="password_confirmation" required autocomplete="current-password">
+                            <i class="fas fa-lock"></i>
+                                              </div>
+                    </div>
+                    <div class="input-field text-center">
+                      <button type="submit" class="btn  btn-lg w-100" style="background-color: rgb(255, 216, 187); background-position: center;">Sign Up</button>
+                      <p class="my-2">Do have an Account? <a href="/loginpg" class="text-white fw-bold">Login Here</a></p>
+                     <!-- <a href="#" class="text-info fw-bold">Forgot Password?</a> -->
+                    </div>
+                  </form>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+
+
+{% endblock  %} 

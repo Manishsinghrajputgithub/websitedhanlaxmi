@@ -1,0 +1,264 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Satta App</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="180x180">
+  <link rel="icon" href="assets/images/logo.png" sizes="32x32" type="image/png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" />
+
+  <!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+   
+</head>
+
+<body>
+  <div class="main-wrapper" id="body-pd">
+
+<!-- sidebar start -->
+<div class="sidenav d-flex flex-column justify-content-between" id="nav-bar">
+  <div class="sidebody">
+    <div class="sidebar-logo">
+      <a href="index.html" class="d-flex align-items-center">
+        <!-- <img src="assets/images/logo.png" alt="logo" width="70"> -->
+        <i class="ri-user-line me-2 " style="color: #ee4f00;"></i>
+        <div class="logo-info">
+          <h2 class="fw-bold fs-5 m-0" >{{client}}</h2>
+          <small class="m-0">{{client.mobile}}</small>
+        </div>
+      </a>
+    </div>
+    <ul class="sidebar-menu" id="nav_accordion">
+      <li class="nav-item">
+        <a href="/games">
+          <span class="mm-text dash-item"><i class="ri-home-4-line me-3 fs-2 " style="color: #ee4f00;"></i>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/myprofile">
+          <span class="mm-text dash-item"><i class="ri-user-line me-3 fs-2 " style="color: #ee4f00;"></i>My Profile</span>
+        </a>
+      </li>
+                <li class="nav-item">
+        <a href="/history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My History</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/bid-history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My Bid</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/payment">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>Payment Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/passbook">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Account Statement</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/gameprice">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Game Rates</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/howtoplay">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>How to Play</span>
+        </a>
+      </li>
+      
+                <li class="nav-item">
+        <a href="/privacypolicy">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Privacy Policy</span>
+        </a>
+      </li>
+                
+      <li class="nav-item">
+          <a href="/Elogout" ><span class="mm-text dash-item"><i class="ri-notification-line me-3 fs-2 " style="color: #ee4f00;"></i>Logout</span></a>
+                               
+        
+      </li>
+     
+    </ul>
+  </div>
+
+</div><!-- sidebar end -->
+
+<!-- main header start -->
+    <main class="fullheight bg-light">
+
+<!-- main header end -->
+        <div class="main-body">
+            <div class="home-wraper">
+                <div class="container">
+                    <div class="row gy-3">
+            <div class="col-sm-12 my-3 px-0" style="background-color: #d0960e;">
+             <div class=" shadow-sm px-3 py-2 d-flex align-items-center justify-content-between">
+              <h5 class="fw-semibild m-0 text-white"><a href="/games"><span class="ri-arrow-left-line text-white me-3"></span></a>Add Funds</h5>
+              <div class="wallet px-3 py-1 rounded-2 bg-white bg-opacity-50">
+              <i class="ri-wallet-3-line fs-6"></i> <span class="ms-2 fs-6">{{client.wallet}}</span>
+            </div>
+             </div>
+            </div>
+          </div>
+          <!-- QRCode -->
+         <form action="/UserDeposit" method="POST" class="shadow p-4 rounded-4 mb-3"  enctype="multipart/form-data">
+           {% csrf_token %}
+    <input type="hidden" name="_token" value="i8ZlcTDjWpmSWLuqChz4S878P2D7tQSR4y5P8GUQ">        <div class="row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+            
+           
+
+      {% if client.status == "yes" %}
+      <div class="logo-wrap text-center col-xl-3 col-lg-3 col-md-3 col-3 pt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 511.63 511.631" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M489.93 167.875c-14.469-14.465-31.601-21.698-51.394-21.698H331.757c4.189-11.419 6.283-23.601 6.283-36.545 0-23.219-7.758-41.204-23.271-53.96-15.516-12.751-35.166-19.126-58.957-19.126-7.232 0-13.849 1.665-19.845 4.998-5.996 3.328-11.231 8.042-15.703 14.128-4.471 6.091-8.326 12.087-11.56 17.989-3.239 5.901-6.761 12.752-10.566 20.555-3.806 7.808-6.945 13.706-9.419 17.705-6.661 10.47-16.18 22.742-28.549 36.829-.382.571-1.715 2.19-3.999 4.854-2.284 2.666-4.093 4.712-5.424 6.139a531.098 531.098 0 0 1-5.852 6.139c-2.574 2.666-4.858 4.805-6.854 6.424a762.98 762.98 0 0 1-6.424 5.14c-2.284 1.809-4.521 3.14-6.71 3.999-2.187.855-4.233 1.283-6.136 1.283H36.547c-10.09 0-18.704 3.575-25.841 10.71C3.571 200.57 0 209.184 0 219.272v182.725c0 10.088 3.567 18.701 10.706 25.84 7.141 7.136 15.75 10.708 25.841 10.708h82.224c11.228 0 32.449 5.619 63.666 16.848 35.972 13.134 66.616 19.694 91.932 19.694 26.836 0 48.44-7.662 64.809-22.983 16.368-15.317 24.461-36.206 24.267-62.67 11.427-14.657 17.135-31.597 17.135-50.819 0-4.185-.288-8.277-.855-12.274 6.283-10.849 9.804-22.176 10.567-33.976h48.252c19.986 0 37.165-7.231 51.538-21.696 14.366-14.464 21.55-31.688 21.55-51.671-.006-19.609-7.24-36.646-21.702-51.123zM67.665 396.576C64.047 400.193 59.766 402 54.818 402c-4.952 0-9.235-1.807-12.85-5.424-3.618-3.617-5.424-7.898-5.424-12.847s1.807-9.233 5.424-12.848c3.619-3.617 7.898-5.427 12.85-5.427 4.948 0 9.229 1.81 12.847 5.427 3.616 3.614 5.424 7.898 5.424 12.848 0 4.949-1.809 9.23-5.424 12.847zM464.23 244.984c-7.228 7.233-15.804 10.848-25.701 10.848H344.03c2.854 3.234 5.232 7.758 7.135 13.562 1.906 5.804 2.858 11.088 2.858 15.845 0 13.135-5.045 24.455-15.133 33.969 3.429 6.091 5.14 12.662 5.14 19.701 0 7.043-1.667 14.037-4.996 20.984-3.333 6.943-7.854 11.94-13.565 14.986.951 5.701 1.43 11.036 1.43 15.988 0 31.777-17.986 47.67-53.96 47.67-15.419 0-32.502-3.045-51.249-9.13a5331.591 5331.591 0 0 1-55.246-18.274c-18.083-6.087-33.974-9.133-47.68-9.133h-9.135V219.28h9.135c13.513 0 26.835-5.426 39.969-16.279 5.713-4.762 15.325-14.851 28.837-30.266 13.706-15.415 24.366-29.211 31.977-41.396 2.474-3.999 5.996-10.185 10.566-18.559 12.562-26.458 21.127-39.684 25.697-39.684 13.514 0 24.506 2.902 32.976 8.705 8.47 5.807 12.703 15.083 12.703 27.835 0 8.186-1.427 16.228-4.281 24.126-2.857 7.898-5.995 14.372-9.421 19.414s-6.567 10.278-9.422 15.703c-2.854 5.424-4.28 10.041-4.28 13.846h164.452c9.513 0 17.986 3.665 25.412 10.992 7.42 7.332 11.129 15.843 11.129 25.553 0 9.906-3.614 18.47-10.848 25.714z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg><br> Deposit Now
+    </div>
+    <div class="logo-wrap text-center col-xl-6 col-lg-6 col-md-6 col-6">
+        <img src="https://91clubprofit.site/admin_panel/uploads/66b5cada691c2.jpg" alt="logo"  style="width: 150px;" class="rounded-3 mx-auto d-table">
+    </div>
+    <div class="logo-wrap text-center col-xl-3 col-lg-3 col-md-3 col-3 pt-4">
+         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="m437.435 206.33-15.297-18.368c-17.391-20.885-41.685-35.12-68.403-40.085-21.564-4.009-40.655-15.904-53.754-33.497l-55.764-74.896-11.838 7.849c-17.789 11.795-29.736 29.847-33.642 50.83-3.905 20.982.747 42.124 13.103 59.531l30.897 43.515-197.573.008C20.261 201.216 0 221.476 0 246.381c.003 24.9 20.264 45.159 45.164 45.159h105.965a44.96 44.96 0 0 0-2.627 15.167c.003 15.247 7.609 28.744 19.217 36.925a44.894 44.894 0 0 0-6.546 23.4c.002 17.796 10.355 33.217 25.351 40.57a44.882 44.882 0 0 0-4.558 19.751c0 24.902 20.26 45.162 45.164 45.162l83.273-.003h.007c26.011 0 51.983-6.257 75.104-18.093 20.08-10.279 38.127-24.791 52.585-42.228H512V206.33zM482 382.193h-58.628l-4.501 5.967c-26.06 34.544-65.594 54.355-108.468 54.354l-83.274.003c-8.361 0-15.163-6.802-15.163-15.162s6.802-15.161 15.162-15.161h22.044v-30.001h-42.835c-8.36 0-15.163-6.802-15.164-15.161 0-8.361 6.803-15.163 15.164-15.163h42.835v-.002h.001l-.001-29.998h-.001v-.002l-55.502.002c-8.361-.001-15.166-6.805-15.167-15.163 0-8.361 6.803-15.164 15.165-15.164h55.505v-30H45.164c-8.36 0-15.163-6.802-15.164-15.161 0-8.361 6.803-15.163 15.165-15.163l255.481-.269-64.344-90.62c-7.611-10.724-10.478-23.748-8.071-36.676 1.518-8.156 5.008-15.594 10.13-21.798l37.557 50.441c17.627 23.674 43.315 39.682 72.335 45.075a86.967 86.967 0 0 1 50.832 29.788l24.293 29.171H482z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="m117.604 146.91-18.233-18.235h59.263v-30H99.371l18.233-18.234-21.212-21.213-54.447 54.447 54.447 54.448z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg><br> Deposit Now
+    </div>
+
+    <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+        <hr class="my-1">
+        <h6 class="text-center text-info">For Add Funds Related Query Call Or Whatsapp</h6>
+        <p class="text-center m-0">{{sp.whatsapp}}</p>
+        <div class="text-center">UPI : &nbsp;<a onclick="withJquery();"><span id="copyText1" >{{sp.upi}}</span><i class="ri-file-copy-fill px-2"></i><div id="msg"></div></a></div>
+        <hr class="my-1">
+        <h6 class="text-center">Deposite by qr code scan and payment after deposit screen shot and rajistar mobile number send me WhatsApp. {{sp.MinimumDeposit}}</h6>
+    
+      {% endif %}
+                  <input type="text" name="utr" class="form-control mt-2" id="" placeholder="Enter UTR/Transation No." required>
+                  <input type="number" name="amount" min="{{sp.MinimumDeposit}}" class="form-control mt-2" id="" placeholder="Pay Amount" required min="10">
+                  <p class="mx-auto text-center"><button type="submit" class="btn mt-2  btn-success">SUBMIT</button></p> 
+
+          
+            <!-- </div> -->
+             <!--
+            <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <div class="text-center">
+                    <input type="number"  class="form-control" oninput="this.value=(parseInt(this.value)||'')" min="500" max="100000" name="amount" id="amount" placeholder="enter amount" required/>
+                    <p class="text-center text-warning">Enter minimum amount ₹500</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                    <a data-rs="500" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹500</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                    <a data-rs="1000" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹1,000</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                    <a data-rs="2000"  class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹2,000</a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                    <a data-rs="5000" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹5,000</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-4">
+                <div class="pbtn">
+                    <a data-rs="10000" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹10,000</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-4">
+                <div class="pbtn">
+                    <a data-rs="50000" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹50,000</a>
+                </div>
+            </div>
+            <div class="col-md-3 col-4">
+                <div class="pbtn">
+                    <a data-rs="100000" class="btn btn-light shadow-sm py-2 w-100 btnrs px-0">₹1,00,000</a>
+                </div>
+            </div>
+        
+           <div class="bibtn col-xl-12 col-lg-12 col-md-12 col-12 py-2 px-4 bg-light text-center">
+            <button type="submit"  class="btn btn-info btnsubmit">Submit </button>
+            </div>
+                </div>-->
+    </form>
+    <!-- end QRCode -->
+                    </div>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </main>
+  </div>
+
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/jquery.min.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/main.js"></script>
+    
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+  <script>
+     {% if message  %}
+     alertify.set('notifier','position', 'top-right');
+     alertify.success('{{message}}' );
+     {% endif %}
+   </script>  
+
+  
+        
+    
+    <script>
+    $(document).ready(function(){
+        $('.btnrs').on('click',function(){
+            var amount=$(this).data('rs');
+            $('#amount').val(amount);
+        });
+        $('.btnsubmit').on('click',function(){
+                var amount=parseInt($('#amount').val());
+                var min=parseInt($('#amount').attr('min'));
+                var max=parseInt($('#amount').attr('max'));
+                
+                if(amount<min && amount>max){ 
+                    alert("Enter amount between "+min+" to "+max);
+                    return false;
+                }
+           
+        });
+       
+    });
+</script>
+<script>
+    function withJquery(){
+	var temp = $("<input>");
+  $("body").append(temp);
+ temp.val($('#copyText1').text()).select();
+  document.execCommand("copy");
+  temp.remove();
+  $('#msg').html(
+        '<div class="alert alert-success alert-dismissable">Copied</div>'
+        );
+        setTimeout(function(){
+        $(".alert-success").hide();
+    }, 5000);
+}
+</script>
+
+</body>
+
+</html>

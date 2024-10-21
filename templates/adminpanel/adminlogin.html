@@ -1,0 +1,37 @@
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AS Admin Login</title>
+            
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/adminlogin.css' %}" />
+  </head>
+  <body>
+    <div class="login-box">
+      <img src="{% static 'images/user.png' %}" />
+      <h2>AS Admin Login</h2>
+      <p class="text-danger"> </p>
+      <form action="/adminlogin" method="post">
+        {% csrf_token %}
+        <input type="number" name="contact_no" required placeholder="Mobile" />
+        <input type="password" name="password" required placeholder="Password" />
+        <button type="submit">Sign In</button>
+      </form>
+      <br />
+      <a href="#">Forgot Password?</a>
+    </div>
+    
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+    <script>
+      {% if message  %}
+      alertify.set('notifier','position', 'top-right');
+    alertify.success('{{message}}' );
+    {% endif %}
+  </script>  
+</body>
+  </html>

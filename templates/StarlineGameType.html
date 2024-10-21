@@ -1,0 +1,174 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Satta App</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="180x180">
+  <link rel="icon" href="assets/images/logo.png" sizes="32x32" type="image/png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" />
+  <style>
+    .card{
+      border: 1px solid #d0960e;
+     
+    }
+
+    .card h5{
+      color: black;
+    }
+  </style>
+   
+</head>
+
+<body>
+  <div class="main-wrapper" id="body-pd">
+
+<!-- sidebar start -->
+<div class="sidenav d-flex flex-column justify-content-between" id="nav-bar">
+  <div class="sidebody">
+    <div class="sidebar-logo">
+      <a href="index.html" class="d-flex align-items-center">
+        <!-- <img src="assets/images/logo.png" alt="logo" width="70"> -->
+        <i class="ri-user-line me-2 " style="color: #d0960e;"></i>
+        <div class="logo-info">
+          <h2 class="fw-bold fs-5 m-0" >{{client}}</h2>
+          <small class="m-0">{{client.mobile}}</small>
+        </div>
+      </a>
+    </div>
+    <ul class="sidebar-menu" id="nav_accordion">
+      <li class="nav-item">
+        <a href="/games">
+          <span class="mm-text dash-item"><i class="ri-home-4-line me-3 fs-2 " style="color: #d0960e;"></i>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/myprofile">
+          <span class="mm-text dash-item"><i class="ri-user-line me-3 fs-2 " style="color: #d0960e;"></i>My Profile</span>
+        </a>
+      </li>
+                <li class="nav-item">
+        <a href="/history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #d0960e;"></i>My History</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/bid-history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #d0960e;"></i>My Bid</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/payment">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #d0960e;"></i>Payment Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/passbook">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #d0960e;"></i>Account Statement</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/gameprice">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #d0960e;"></i>Game Rates</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/howtoplay">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #d0960e;"></i>How to Play</span>
+        </a>
+      </li>
+      
+                <li class="nav-item">
+        <a href="/privacypolicy">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #d0960e;"></i>Privacy Policy</span>
+        </a>
+      </li>
+                
+      <li class="nav-item">
+          <a href="/Elogout" ><span class="mm-text dash-item"><i class="ri-notification-line me-3 fs-2 " style="color: #d0960e;"></i>Logout</span></a>
+                               
+        
+      </li>
+     
+    </ul>
+  </div>
+
+</div><!-- sidebar end -->
+<!-- main header start -->
+    <main class="fullheight bg-light">
+
+<!-- main header end -->
+        <div class="main-body">
+            <div class="home-wraper">
+                <div class="container">
+                    <div class="row gy-3 gameopen">
+            <div class="col-sm-12 my-3 px-0">
+             <div class=" shadow-sm p-3" style="background-color: #d0960e;">
+              <h5 class="fw-semibild m-0"><a href="/starlines"><span class="ri-arrow-left-line me-3"></span></a>STARLINE</h5>
+             </div>
+            </div>
+            <div class="col-6 col-md-6">
+                <div class="card h-100 text-center  shadow-sm " style="border-top-right-radius: 10%; border-bottom-left-radius: 10%; background-color: rgb(255, 216, 187);">
+                    <a href='/StarlineSingleAnk{{name}}'><div class="card-img d-flex flex-column justify-content-between align-items-center p-1">
+                        <img src="https://dpboss777.co.in/assets/frontend/assets/images/g1.png" alt="play" class="img-fluid">
+                      <h5 class="fw-bold mt-2 fs-sm-5 fs-6 ">Signle Ank</h5>
+                    </div></a>
+                  </div>
+            </div>
+            <div class="col-6 col-md-6">
+                <div class="card h-100 text-center  shadow-sm " style="border-top-left-radius: 10%; border-bottom-right-radius: 10%; background-color: rgb(255, 216, 187);">
+                    <a href='/StarlineSinglePatti{{name}}'><div class="card-img d-flex p-2 flex-column justify-content-between align-items-center p-1">
+                        <img src="https://dpboss777.co.in/assets/frontend/assets/images/g3.png" alt="play" class="img-fluid">
+                      <h5 class="fw-bold mt-2 fs-sm-5 fs-6 ">Single Patti</h5>
+                    </div></a>
+                  </div>
+            </div>
+            <div class="col-6 col-md-6">
+                <div class="card h-100 text-center  shadow-sm " style="border-top-left-radius: 10%; border-bottom-right-radius: 10%; background-color: rgb(255, 216, 187);">
+                      <a href='/StarlineDoublePatti{{name}}'><div class="card-img d-flex flex-column justify-content-between align-items-center p-2">
+                        <img src="https://dpboss777.co.in/assets/frontend/assets/images/g4.png" alt="play" class="img-fluid">
+                      <h5 class="fw-bold mt-2 fs-sm-5 fs-6 ">Double Patti</h5></a>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-6 col-md-6">
+                <div class="card h-100 text-center shadow-sm " style="border-top-right-radius: 10%; border-bottom-left-radius: 10%; background-color: rgb(255, 216, 187);">
+                      <a href='/StarlineDoublePatti{{name}}'><div class="card-img d-flex flex-column justify-content-between align-items-center p-2">
+                        <img src="https://dpboss777.co.in/assets/frontend/assets/images/g5.png" alt="play" class="img-fluid">
+                      <h5 class="fw-bold mt-2 fs-sm-5 fs-6 ">Tripple Patti</h5>
+                    </div></a>
+                  </div>
+            
+          </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </main>
+  </div>
+
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/jquery.min.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/main.js"></script>
+    
+
+
+  
+        
+    
+    
+</body>
+
+</html>

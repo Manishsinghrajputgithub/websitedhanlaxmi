@@ -1,0 +1,512 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+Starline Games Bids History
+{% endblock %}
+
+{% block content %}
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Starline Declare Result</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="Dashboard">Home</a></li>
+                  <li class="breadcrumb-item active">Starline Declare Result</li>
+                </ol>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+    
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <!-- SELECT2 EXAMPLE -->
+              
+                             
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title">Filters</h3>
+    
+                        <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool" data-card-widget="remove">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <form method="post" action="/DeclareStarlineResult">
+                            {% csrf_token %}
+                            
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Date</label>
+                                    <input type="date" name="date" id="resultDate" value="{% now "Y-m-d" %}" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                <label>Game</label>
+                                <select id="gameId" name="gameId" class="form-control select2bs4" style="width: 100%;">
+                                    <option value="" selected disabled>Select Game</option>
+                                                                    {% for i in dt  %}
+                                                                    <option value="{{i.name}}">Main starline {{i.name}}</option>
+
+                                                                    {% endfor %}
+                                                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                <label>Pana</label>
+                                <select name="panna" class="form-control select2bs4" id="pana" style="width: 100%;">
+                                  <option value="" selected disabled>Select Pana</option>
+                                                                        <option value="000">000</option>
+                                                                        <option value="100">100</option>
+                                                                        <option value="110">110</option>
+                                                                        <option value="111">111</option>
+                                                                        <option value="112">112</option>
+                                                                        <option value="113">113</option>
+                                                                        <option value="114">114</option>
+                                                                        <option value="115">115</option>
+                                                                        <option value="116">116</option>
+                                                                        <option value="117">117</option>
+                                                                        <option value="118">118</option>
+                                                                        <option value="119">119</option>
+                                                                        <option value="120">120</option>
+                                                                        <option value="122">122</option>
+                                                                        <option value="123">123</option>
+                                                                        <option value="124">124</option>
+                                                                        <option value="125">125</option>
+                                                                        <option value="126">126</option>
+                                                                        <option value="127">127</option>
+                                                                        <option value="128">128</option>
+                                                                        <option value="129">129</option>
+                                                                        <option value="130">130</option>
+                                                                        <option value="133">133</option>
+                                                                        <option value="134">134</option>
+                                                                        <option value="135">135</option>
+                                                                        <option value="136">136</option>
+                                                                        <option value="137">137</option>
+                                                                        <option value="138">138</option>
+                                                                        <option value="139">139</option>
+                                                                        <option value="140">140</option>
+                                                                        <option value="144">144</option>
+                                                                        <option value="145">145</option>
+                                                                        <option value="146">146</option>
+                                                                        <option value="147">147</option>
+                                                                        <option value="148">148</option>
+                                                                        <option value="149">149</option>
+                                                                        <option value="150">150</option>
+                                                                        <option value="155">155</option>
+                                                                        <option value="156">156</option>
+                                                                        <option value="157">157</option>
+                                                                        <option value="158">158</option>
+                                                                        <option value="159">159</option>
+                                                                        <option value="160">160</option>
+                                                                        <option value="166">166</option>
+                                                                        <option value="167">167</option>
+                                                                        <option value="168">168</option>
+                                                                        <option value="169">169</option>
+                                                                        <option value="170">170</option>
+                                                                        <option value="177">177</option>
+                                                                        <option value="178">178</option>
+                                                                        <option value="179">179</option>
+                                                                        <option value="180">180</option>
+                                                                        <option value="188">188</option>
+                                                                        <option value="189">189</option>
+                                                                        <option value="190">190</option>
+                                                                        <option value="199">199</option>
+                                                                        <option value="200">200</option>
+                                                                        <option value="220">220</option>
+                                                                        <option value="222">222</option>
+                                                                        <option value="223">223</option>
+                                                                        <option value="224">224</option>
+                                                                        <option value="225">225</option>
+                                                                        <option value="226">226</option>
+                                                                        <option value="227">227</option>
+                                                                        <option value="228">228</option>
+                                                                        <option value="229">229</option>
+                                                                        <option value="230">230</option>
+                                                                        <option value="233">233</option>
+                                                                        <option value="234">234</option>
+                                                                        <option value="235">235</option>
+                                                                        <option value="236">236</option>
+                                                                        <option value="237">237</option>
+                                                                        <option value="238">238</option>
+                                                                        <option value="239">239</option>
+                                                                        <option value="240">240</option>
+                                                                        <option value="244">244</option>
+                                                                        <option value="245">245</option>
+                                                                        <option value="246">246</option>
+                                                                        <option value="247">247</option>
+                                                                        <option value="248">248</option>
+                                                                        <option value="249">249</option>
+                                                                        <option value="250">250</option>
+                                                                        <option value="255">255</option>
+                                                                        <option value="256">256</option>
+                                                                        <option value="257">257</option>
+                                                                        <option value="258">258</option>
+                                                                        <option value="259">259</option>
+                                                                        <option value="260">260</option>
+                                                                        <option value="266">266</option>
+                                                                        <option value="267">267</option>
+                                                                        <option value="268">268</option>
+                                                                        <option value="269">269</option>
+                                                                        <option value="270">270</option>
+                                                                        <option value="277">277</option>
+                                                                        <option value="278">278</option>
+                                                                        <option value="279">279</option>
+                                                                        <option value="280">280</option>
+                                                                        <option value="288">288</option>
+                                                                        <option value="289">289</option>
+                                                                        <option value="290">290</option>
+                                                                        <option value="299">299</option>
+                                                                        <option value="300">300</option>
+                                                                        <option value="330">330</option>
+                                                                        <option value="333">333</option>
+                                                                        <option value="334">334</option>
+                                                                        <option value="335">335</option>
+                                                                        <option value="336">336</option>
+                                                                        <option value="337">337</option>
+                                                                        <option value="338">338</option>
+                                                                        <option value="339">339</option>
+                                                                        <option value="340">340</option>
+                                                                        <option value="344">344</option>
+                                                                        <option value="345">345</option>
+                                                                        <option value="346">346</option>
+                                                                        <option value="347">347</option>
+                                                                        <option value="348">348</option>
+                                                                        <option value="349">349</option>
+                                                                        <option value="350">350</option>
+                                                                        <option value="355">355</option>
+                                                                        <option value="356">356</option>
+                                                                        <option value="357">357</option>
+                                                                        <option value="358">358</option>
+                                                                        <option value="359">359</option>
+                                                                        <option value="360">360</option>
+                                                                        <option value="366">366</option>
+                                                                        <option value="367">367</option>
+                                                                        <option value="368">368</option>
+                                                                        <option value="369">369</option>
+                                                                        <option value="370">370</option>
+                                                                        <option value="377">377</option>
+                                                                        <option value="378">378</option>
+                                                                        <option value="379">379</option>
+                                                                        <option value="380">380</option>
+                                                                        <option value="388">388</option>
+                                                                        <option value="389">389</option>
+                                                                        <option value="390">390</option>
+                                                                        <option value="399">399</option>
+                                                                        <option value="400">400</option>
+                                                                        <option value="440">440</option>
+                                                                        <option value="444">444</option>
+                                                                        <option value="445">445</option>
+                                                                        <option value="446">446</option>
+                                                                        <option value="447">447</option>
+                                                                        <option value="448">448</option>
+                                                                        <option value="449">449</option>
+                                                                        <option value="450">450</option>
+                                                                        <option value="455">455</option>
+                                                                        <option value="456">456</option>
+                                                                        <option value="457">457</option>
+                                                                        <option value="458">458</option>
+                                                                        <option value="459">459</option>
+                                                                        <option value="460">460</option>
+                                                                        <option value="466">466</option>
+                                                                        <option value="467">467</option>
+                                                                        <option value="468">468</option>
+                                                                        <option value="469">469</option>
+                                                                        <option value="470">470</option>
+                                                                        <option value="477">477</option>
+                                                                        <option value="478">478</option>
+                                                                        <option value="479">479</option>
+                                                                        <option value="480">480</option>
+                                                                        <option value="488">488</option>
+                                                                        <option value="489">489</option>
+                                                                        <option value="490">490</option>
+                                                                        <option value="499">499</option>
+                                                                        <option value="500">500</option>
+                                                                        <option value="550">550</option>
+                                                                        <option value="555">555</option>
+                                                                        <option value="556">556</option>
+                                                                        <option value="557">557</option>
+                                                                        <option value="558">558</option>
+                                                                        <option value="559">559</option>
+                                                                        <option value="560">560</option>
+                                                                        <option value="566">566</option>
+                                                                        <option value="567">567</option>
+                                                                        <option value="568">568</option>
+                                                                        <option value="569">569</option>
+                                                                        <option value="570">570</option>
+                                                                        <option value="577">577</option>
+                                                                        <option value="578">578</option>
+                                                                        <option value="579">579</option>
+                                                                        <option value="580">580</option>
+                                                                        <option value="588">588</option>
+                                                                        <option value="589">589</option>
+                                                                        <option value="590">590</option>
+                                                                        <option value="599">599</option>
+                                                                        <option value="600">600</option>
+                                                                        <option value="660">660</option>
+                                                                        <option value="666">666</option>
+                                                                        <option value="667">667</option>
+                                                                        <option value="668">668</option>
+                                                                        <option value="669">669</option>
+                                                                        <option value="670">670</option>
+                                                                        <option value="677">677</option>
+                                                                        <option value="678">678</option>
+                                                                        <option value="679">679</option>
+                                                                        <option value="680">680</option>
+                                                                        <option value="688">688</option>
+                                                                        <option value="689">689</option>
+                                                                        <option value="690">690</option>
+                                                                        <option value="699">699</option>
+                                                                        <option value="700">700</option>
+                                                                        <option value="770">770</option>
+                                                                        <option value="777">777</option>
+                                                                        <option value="778">778</option>
+                                                                        <option value="779">779</option>
+                                                                        <option value="780">780</option>
+                                                                        <option value="788">788</option>
+                                                                        <option value="789">789</option>
+                                                                        <option value="790">790</option>
+                                                                        <option value="799">799</option>
+                                                                        <option value="800">800</option>
+                                                                        <option value="880">880</option>
+                                                                        <option value="888">888</option>
+                                                                        <option value="889">889</option>
+                                                                        <option value="890">890</option>
+                                                                        <option value="899">899</option>
+                                                                        <option value="900">900</option>
+                                                                        <option value="990">990</option>
+                                                                        <option value="999">999</option>
+                                                                </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Digit</label>
+                                    <input  name="digit" type="number" id="digit" class="form-control" value=""   />
+                                </div>
+                            </div>
+                            
+                             <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Jodi</label>
+                                    <input  name="jodi" type="number" id="jodi" class="form-control" value="NA" />
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group mt-2">
+                                      <button type="button" onclick="$(this).hide(); $('#show_buttons').show();" class="btn btn-primary mt-4">SAVE</button>
+                                    <div id="show_buttons" style="display:none;">
+                                      
+                                      <button name="submit" type="submit" class="btn btn-primary mt-4">DECLARE RESULT</button>
+                                  
+                                    <button id="showResult" type="button" class="btn btn-primary mt-4">SHOW WINNERS</button>
+                                      
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                      </div>
+                    </div>
+                    <!-- /.card -->
+                    
+                    <!-- After Save results show buttons Show Winners & Declare Results -->
+                    <div class="card card-default">
+                      <!-- /.card-header -->
+                      <div class="card-body center" style='display:none'>
+                        <button type="button" id="showResult" class="btn btn-success">Show Winners</button>
+                        <button type="submit" id="declareResult" class="btn btn-info">Declare Result</button>
+                      </div>
+                    </div>
+                  </form>
+                <!-- /.card -->
+            </div>
+        </section>
+    
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                        <input type="date" id="PrevResultFilterDate" value="2024-09-22" class="form-control" required/>
+                    </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Game Name</th>
+                        <th>Result Date</th>
+                        <th>Open Pana</th>
+                        <th>Action</th>
+                      </tr>
+                      </thead>
+                      <tbody id="tbody">
+
+                        
+                        {% for i in dt %}
+                        <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{% now "Y-m-d" %}</td>
+                        <td>
+                           {{i.pana}} &nbsp;
+                           {{i.digit}}&nbsp;
+                           {{i.jodi}}
+
+                        </td>
+                        <td>            <button class="btn btn-danger" data-toggle="modal" data-target="#deleteResult{{forloop.counter}}">Delete</button>
+                        </td>
+                        </tr>
+                        
+                                                                      <!--Delete Result-->
+                                                                      <div class="modal fade" id="deleteResult{{forloop.counter}}">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                          <div class="modal-content">
+                                                                          
+                                                                            <!-- Modal Header -->
+                                                                            <div class="modal-header">
+                                                                              <h4 class="modal-title">Are you sure you want to delete this result?</h4>
+                                                                            </div>
+                                                                            
+                                                                            <!-- Modal body -->
+                                                                            <div class="modal-body">
+                                                                              <form method="post" action="/StarlineResultDelete">
+                                                                                {% csrf_token %}
+                                                                                  <input type="hidden" name="resultDate" value="" required/>
+                                                                                  <input type="hidden" name="gameID" value="{{i.name}}" required/>
+                                                                                  <!-- Modal footer -->
+                                                                                    <div class="modal-footer">
+                                                                                      <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+                                                                                      <button type="submit" name="deleteResult" class="btn btn-success">Yes</button>
+                                                                                    </div>
+                                                                              </form>
+                                                                            </div>
+                                                                            
+                                                                            
+                                                                            
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                        {% endfor %}
+                                          </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+        
+    <!--Show Winners Model-->
+      <div class="modal fade" id="showWinners">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Winners List</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Modal body -->
+            <div class="modal-body" style="overflow: scroll;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>User Name</th>
+                            <th>Bid Points</th>
+                            <th>Winning Points</th>
+                            <th>Market Name</th>
+                            <th>Game Name</th>
+                            <th>Bid number</th>
+                            <th>Date</th>
+                            <th>Profile</th>
+                        </tr>
+                    </thead>
+                    <tbody id="showWinnersTable">
+                        
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
+    <script>
+        $(function () {
+          $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+          }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+          $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+          });
+        });
+
+        $('#pana').change(function(){
+          var pana = $(this).val();
+          var dsum = 0;
+          for (var i = 0; i < pana.length; i++)
+            {
+          
+              if (/[0-9]/.test(pana[i])) dsum += parseInt(pana[i])
+            }
+            var dd = dsum.toString();
+            var res = dd.charAt(dd.length-1);
+            
+            $('#digit').val(res);
+  });
+  
+      </script>
+
+
+
+{% endblock %}

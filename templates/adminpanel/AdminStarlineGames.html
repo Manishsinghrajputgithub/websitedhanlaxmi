@@ -1,0 +1,144 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+    Game Management
+{% endblock %}
+
+{% block content %}
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Starline Games</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                  <li class="breadcrumb-item active">Starline Games</li>
+                </ol>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+    
+        <!-- Main content -->
+        <section class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                        <a href="#AddNewGame" data-toggle="modal" class="btn btn-primary">Add Game</a>
+                    </h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                      <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Game Name</th>
+                        <th>Open Time</th>
+                        <th>Close</th>
+                        <th>Status</th>
+                        <th>Holiday</th>
+                        <th>Action</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                                       
+  
+                        {% for i in gm  %}
+                        
+                        <tr>
+                          <td>{{forloop.counter}}</td>
+                          <td>{{i.name}}</td>
+                          <td>
+                            {{i.name}}                      </td>
+                            <td>
+                              {% if i.status == "open"   %}
+                                            <a href="/StarlineGameStatus{{i.name}}" class="btn btn-sm btn-success">Yes</a>                      
+                                                {% else %}                                             
+                                                <a href="/StarlineGameStatus{{i.name}}" class="btn btn-sm btn-danger">No</a>   
+                                                {% endif %}
+                            </td>
+                          <td>
+                            {{i.status}}                      </td>
+                            <td>
+                              <a href="/StarlineHoliday{{i.name}}"  class="btn btn-primary">Holiday</a>
+
+                            </td>
+                          
+                          <td>
+                            
+                            <a href="/StarlineGameDelete{{i.name}}" class="btn btn-sm btn-danger">Delete</a>
+                          </td>
+                          
+                        </tr>
+                        {% endfor %}
+                     
+                     
+    
+                     
+    
+                     
+                                        </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    
+    <!-- Add New Game -->
+    <div class="modal fade" id="AddNewGame">
+        <div class="modal-dialog">
+            <div class="modal-content bg-primary">
+                <div class="modal-header">
+                  <h4 class="modal-title">Add New Game</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form method="POST" action="/StarlineGameAdd">
+                  {% csrf_token %}
+                    <div class="modal-body">
+                        <input type="hidden" name="market" value="Main starline" />
+                        <div class="form-group">
+                            <label>Game Chart</label>
+                            <input type="text" class="form-control" name="gameName" required />
+                        </div>
+                        <div class="form-group">
+                            <label>Open Time</label>
+                            <input type="time" class="form-control" name="closeTime" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" required />
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="submit" name="CreateNew" class="btn btn-outline-light">Save changes</button>
+                    </div>
+                </form>
+            </div>
+              <!-- /.modal-content -->
+        </div>
+            <!-- /.modal-dialog -->
+    </div>
+    
+    </div>
+
+
+
+      
+    
+{% endblock %}

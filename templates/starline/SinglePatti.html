@@ -1,0 +1,1284 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Satta App</title>
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="https://firebasestorage.googleapis.com/v0/b/kalyan-market-9da36.appspot.com/o/WhatsApp%20Image%202024-10-21%20at%206.55.29%20PM.jpeg?alt=media&token=3328c3ba-45ca-4ed2-b7d1-e943039a8f99" sizes="180x180">
+  <link rel="icon" href="assets/images/logo.png" sizes="32x32" type="image/png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+  <link rel="stylesheet" href="https://dpboss777.co.in/assets/frontend/assets/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.css" />
+   
+</head>
+
+<body>
+  <div class="main-wrapper" id="body-pd">
+
+<!-- sidebar start -->
+<div class="sidenav d-flex flex-column justify-content-between" id="nav-bar">
+  <div class="sidebody">
+    <div class="sidebar-logo">
+      <a href="index.html" class="d-flex align-items-center">
+        <!-- <img src="assets/images/logo.png" alt="logo" width="70"> -->
+        <i class="ri-user-line me-2 " style="color: #ee4f00;"></i>
+        <div class="logo-info">
+          <h2 class="fw-bold fs-5 m-0" >{{client}}</h2>
+          <small class="m-0">{{client.mobile}}</small>
+        </div>
+      </a>
+    </div>
+    <ul class="sidebar-menu" id="nav_accordion">
+      <li class="nav-item">
+        <a href="/games">
+          <span class="mm-text dash-item"><i class="ri-home-4-line me-3 fs-2 " style="color: #ee4f00;"></i>Home</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/myprofile">
+          <span class="mm-text dash-item"><i class="ri-user-line me-3 fs-2 " style="color: #ee4f00;"></i>My Profile</span>
+        </a>
+      </li>
+                <li class="nav-item">
+        <a href="/history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My History</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/bid-history">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>My Bid</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/payment">
+          <span class="mm-text dash-item"><i class="ri-hourglass-line me-3 fs-2 " style="color: #ee4f00;"></i>Payment Details</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/passbook">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Account Statement</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/gameprice">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Game Rates</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/howtoplay">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>How to Play</span>
+        </a>
+      </li>
+      
+                <li class="nav-item">
+        <a href="/privacypolicy">
+          <span class="mm-text dash-item"><i class="ri-medal-line me-3 fs-2 " style="color: #ee4f00;"></i>Privacy Policy</span>
+        </a>
+      </li>
+                
+      <li class="nav-item">
+          <a href="/Elogout" ><span class="mm-text dash-item"><i class="ri-notification-line me-3 fs-2 " style="color: #ee4f00;"></i>Logout</span></a>
+                               
+        
+      </li>
+     
+    </ul>
+  </div>
+
+</div><!-- sidebar end -->
+
+<!-- main header start -->
+    <main class="fullheight bg-light">
+
+<!-- main header end -->
+        <div class="main-body">
+            <div class="home-wraper">
+                <div class="container">
+                    <form action="/StarlineSinglebet" id="myform" method="POST">
+                      {% csrf_token %}
+            <input type="hidden" name="_token" value="kC5PLvUv6M9LXE4yqz4Vb9dL5RjSDZ8v1nkQdRpg"><div class="fxdsng sticky-top bg-white pb-4">
+  <div class="row gy-3 px-0">
+            <div class="col-sm-12 mb-2 mt-0 px-0" style="background-color: #d0690e;">
+             <div class=" shadow-sm px-3 py-2 d-flex align-items-center justify-content-between">
+              <h5 class="fw-semibild m-0"><a href='/starlinegametype{{name}}'><span class="ri-arrow-left-line me-3"></span></a>Single Patti</h5>
+              <div class="wallet px-3 py-1 rounded-2 bg-white bg-opacity-50">
+              <i class="ri-wallet-3-line fs-6"></i> <span class="ms-2 fs-6">{{client.wallet}}</span>
+            </div>
+             </div>
+            </div>
+          </div>
+          
+            <input type="hidden" name="game_id" value="39"/>
+            <input type="hidden" name="pana" value="singlepatti"/>
+            <input type="hidden" name="page" value="single-patti"/>
+            <input type="hidden" name="pana_name" value="Single Patti"/>
+            <input type="hidden" name="game_name" value="{{name}}"/>
+            <div class="row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-3 px-3">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+                  <input type="text" readonly class="form-control w-auto" value="{% now "Y-m-d" %}">
+                  <input type="hidden"  class="form-control w-auto" name="bid_date" value="{{td}}">
+            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-6">
+                <div class="select-field ms-sm-auto d-sm-table">
+                    <select name="session"  class="form-select w-auto">
+                        <option value="open">{{name}} OPEN</option>
+                        <option value="close">{{name}} CLOSE</option>
+                    </select>
+                </div>
+            </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                <h5 class="text-center" style="color: #d0960e !important;">Select Points for Betting</h5>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" hidden>
+                    <label for="flexRadioDefault1" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="5" value="5">5</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" hidden>
+                <label for="flexRadioDefault2" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points"  data-id="10" value="10">10</label>
+                </div>
+            </div>
+             <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" hidden>
+                <label for="flexRadioDefault3" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="20"  value="20">20</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" hidden>
+                <label for="flexRadioDefault4" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="50"  value="50">50</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" hidden>
+                <label for="flexRadioDefault5" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="100"  value="100">100</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" hidden>
+                <label for="flexRadioDefault6" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="200"  value="200">200</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault7" hidden>
+                <label for="flexRadioDefault7" class="btn btn-light shadow-sm px-4 py-2 w-100 points" name="points" data-id="500"  value="500">500</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="pbtn">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault8" hidden>
+                <label for="flexRadioDefault8" class="btn btn-light shadow-sm py-2 w-100 points" name="points" data-id="1000"  value="1000">1000</label>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="select-digit-wrap mt-4">
+            <div class="sdigit">
+             <h5 class="text-center" style="color: #d0960e !important;">Select Digits</h5>
+
+            </div>
+            <div class="d-flex flex-column gap-4">
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 0</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            127
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="127" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid127"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            136
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="136" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid136"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            145
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="145" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid145"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            190
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="190" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid190"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            235
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="235" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid235"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            280
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="280" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid280"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            370
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="370" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid370"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            479
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="479" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid479"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            460
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="460" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid460"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            569
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="569" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid569"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            389
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="389" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid389"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            578
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="578" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid578"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 1</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            128
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="128" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid128"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            137
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="137" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid137"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            146
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="146" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid146"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            236
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="236" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid236"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            245
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="245" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid245"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            290
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="290" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid290"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            380
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="380" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid380"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            470
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="470" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid470"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            489
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="489" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid489"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            560
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="560" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid560"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            678
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="678" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid678"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            579
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="579" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid579"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 2</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            129
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="129" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid129"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            138
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="138" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid138"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            147
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="147" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid147"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            156
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="156" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid156"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            237
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="237" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid237"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            246
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="246" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid246"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            345
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="345" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid345"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            390
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="390" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid390"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            480
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="480" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid480"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            570
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="570" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid570"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            679
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="679" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid679"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            589
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="589" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid589"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 3</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            120
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="120" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid120"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            139
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="139" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid139"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            148
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="148" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid148"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            157
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="157" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid157"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            238
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="238" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid238"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            247
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="247" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid247"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            256
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="256" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid256"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            346
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="346" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid346"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            490
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="490" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid490"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            580
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="580" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid580"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            670
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="670" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid670"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            689
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="689" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid689"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 4</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            130
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="130" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid130"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            149
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="149" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid149"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            158
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="158" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid158"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            167
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="167" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid167"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            239
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="239" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid239"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            248
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="248" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid248"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            257
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="257" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid257"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            347
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="347" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid347"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            356
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="356" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid356"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            590
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="590" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid590"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            680
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="680" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid680"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            789
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="789" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid789"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 5</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            140
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="140" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid140"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            159
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="159" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid159"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            168
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="168" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid168"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            230
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="230" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid230"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            249
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="249" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid249"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            258
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="258" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid258"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            267
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="267" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid267"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            348
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="348" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid348"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            357
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="357" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid357"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            456
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="456" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid456"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            690
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="690" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid690"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            780
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="780" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid780"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 6</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            123
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="123" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid123"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            150
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="150" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid150"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            169
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="169" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid169"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            178
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="178" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid178"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            240
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="240" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid240"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            259
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="259" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid259"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            268
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="268" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid268"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            349
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="349" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid349"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            358
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="358" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid358"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            457
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="457" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid457"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            367
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="367" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid367"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            790
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="790" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid790"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 7</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            124
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="124" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid124"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            160
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="160" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid160"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            179
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="179" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid179"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            250
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="250" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid250"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            269
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="269" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid269"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            278
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="278" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid278"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            340
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="340" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid340"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            359
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="359" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid359"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            368
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="368" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid368"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            458
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="458" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid458"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            467
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="467" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid467"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            890
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="890" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid890"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 8</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            125
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="125" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid125"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            134
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="134" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid134"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            170
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="170" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid170"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            189
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="189" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid189"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            260
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="260" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid260"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            279
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="279" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid279"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            350
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="350" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid350"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            369
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="369" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid369"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            378
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="378" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid378"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            459
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="459" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid459"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            567
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="567" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid567"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            468
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="468" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid468"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+                        
+                <div class="inner-row row row-cols-xl-6 row-cols-lg-5 row-cols-md-5 row-cols-sm-5 row-cols-4 gy-2">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-12">
+                            <h6 class="text-dark fw-bold pt-3">Select Digit 9</h6>
+                        </div>
+                    
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            126
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="126" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid126"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            135
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="135" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid135"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            180
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="180" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid180"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            234
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="234" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid234"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            270
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="270" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid270"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            289
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="289" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid289"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            360
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="360" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid360"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            379
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="379" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid379"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            450
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="450" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid450"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            469
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="469" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid469"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            478
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="478" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid478"></div>
+                        </div>
+                      </div>
+                                          <div class="col">
+                        <div class="digit-field text-center">
+                            568
+                            <input type="text" class="form-control text-center px-sm-4 py-3 border-dark digits" data-point="0" data-id="568" readonly style="cursor:pointer"> 
+                            <div class="bid" id="bid568"></div>
+                        </div>
+                      </div>
+                     
+                </div>
+            
+             
+            </div>
+            <div class="bibtn d-flex justify-content-between align-items-center py-2 fixed-bottom px-4 bg-light">
+                <button type="reset" class="btn btn-dark btnreset">Reset BID</button>
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#submitpop" style="background-color: #d0960e !important;">Submit BID</button>
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#submitpop">
+  Launch
+</button> -->
+        </div>
+        
+
+       <!-- modal-->
+<div class="modal fade" id="submitpop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header  text-dark">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{name}} {{td}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Digits</th>
+                        <th>Points</th>
+                        <th>Game Type</th>
+                    </tr>
+                </thead>
+                <tbody class="tdata">
+                  <input type="hidden" id="digit1" readonly name="digit1">
+                  <input type="hidden" id="points1" readonly name="points1">
+                  <input type="text" id="total" readonly name="total">
+                </tbody>
+                <tfoot>
+                    
+                    <tr>
+                        <td colspan="4">
+                            <p>*Note Bid Once Played Will Not Be Cancelled*</p>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row tbldta gy-2">
+          <div class="col-6">
+            <h6>Total Bids</h6>
+          </div>
+          <div class="col-6 text-end">
+            <h6  id="bids">0</h6>
+          </div>
+          <div class="col-6">
+            <h6>Total Bid Amount</h6>
+          </div>
+          <div class="col-6 text-end">
+            <h6  id="points" name="totalamount">0</h6>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-primary" class="btn-close" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+          </div>
+          <div class="col-6 text-end">
+           <button type="submit" class="btn btn-info" onclick="this.form.submit();this.disabled = true;" style="background-color: #d0960e !important;">Submit</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+                </div>
+            </div>
+        </div>
+        <!-- Page Area End Here -->
+    </main>
+  </div>
+
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/jquery.min.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js"></script>
+  <script src="https://dpboss777.co.in/assets/frontend/assets/js/main.js"></script>
+    
+
+
+  
+        
+    
+    <script>
+  $(document).ready(function(){
+    pt=[]
+    dt=[]
+    var points=0;
+    $('.points').on('click',function(){
+      var points=$(this).data('id');
+      $('.digits').data('point',points);
+    });
+    $('.digits').on('click',function(){
+      var id=$(this).data('id');
+      var digit=$(this).val();
+      var point=parseInt($(this).data('point'));
+      var num=0;
+      {% comment %} var session = $('#type').find(":selected").val(); {% endcomment %}
+      if(point==0){
+        alert('first select point');
+        return false;
+      }
+      if(digit){
+        num=parseInt(digit)+point;
+        $(this).val(num);
+        var bid='<input type="hidden" name="bid['+id+']" value="'+num+'" >';
+        $('#bid'+id).html(bid);
+        var tbid="<td>"+id+"</td><td>"+num+"</td>";
+        $('.tbid'+id).html(tbid);
+        var points=parseInt($('#points').html())+point;
+        $('#points').html(points);
+        $('#total').val(points);
+
+      }else{
+        $(this).val(point);
+        var bid='<input type="hidden" name="bid['+id+']" value="'+point+'" >';
+        $('#bid'+id).html(bid);
+        var tbid="<tr class='tbid"+id+"'  data-id='"+id+"'><td>"+id+"</td><td>"+point+"</td></tr>";
+        $('.tdata').append(tbid);
+        var bids=parseInt($('#bids').html())+1;
+        var points=parseInt($('#points').html())+point;
+        $('#bids').html(bids);
+        $('#total').val(points);
+        pt.push(point)
+        dt.push(id)
+        $('#points1').val(pt);
+        $('#digit1').val(dt);
+        $('#points').html(points);
+      }
+     
+    });
+    $('.btnreset').on('click',function(){
+        $('.bid').html("");
+        $('.tdata').html("");
+        $('#bids').html("0");
+        $('#points').html("0");
+        $('.digits').val("");
+    });
+    $('#type').on('change',function(){
+      $('.bid').html("");
+        $('.digits').val("");
+        $('.tdata').html("");
+        $('#bids').html("0");
+        $('#points').html("0");
+    });
+  });
+</script>
+
+</body>
+
+</html>

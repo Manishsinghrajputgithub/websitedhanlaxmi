@@ -1,0 +1,142 @@
+{% extends "adminpanel/adminDashboard.html" %}
+{% block title %}
+   Notification
+{% endblock %}
+
+{% block content %}
+
+        
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+
+ <!-- Content Wrapper. Contains page content -->
+ <div class="content-wrapper">
+
+
+   <!-- Content Header (Page header) -->
+   <section class="content-header">
+         <div class="container-fluid">
+           <div class="row mb-2">
+             <div class="col-sm-6">
+               <h1>Send Notification</h1>
+             </div>
+             <div class="col-sm-6">
+               <ol class="breadcrumb float-sm-right">
+                 <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+                 <li class="breadcrumb-item active">Send Notification</li>
+               </ol>
+             </div>
+           </div>
+         </div><!-- /.container-fluid -->
+       </section>
+   
+       <!-- Main content -->
+       <section class="content">
+         <div class="container-fluid">
+           <div class="row">
+             <div class="col-12">
+               <div class="card">
+                 <div class="card-header bg-danger">
+                      Send Notification
+                 </div>
+                 <!-- /.card-header -->
+                 <div class="card-body">
+                                      <div class="row">
+                       <div class="col-md-3"></div>
+                       <div class="col-md-6">
+                           <form action="/UpdateNotification" method="post">
+                              {% csrf_token %}
+                             
+                               <div class="form-group">
+                                   <label>Title</label>
+                                   <input type="text" class="form-control" name="title" placeholder="Marquee Title" readonly/>
+                               </div>
+                               <div class="form-group">
+                                   <label>Message</label>
+                                   <textarea name="message" rows="5" class="form-control" name="body">{{notice}}</textarea>
+                               </div>
+                               <div class="form-group">
+                                   <button type="submit" name="submit" class="btn btn-primary btn-block">Update</button>
+                               </div>
+                           </form>
+                       </div>
+                       <!-- /.col -->
+                       <div class="col-md-3"></div>
+                   </div>
+                  
+                  </div>
+                  <!-- /.card-body -->
+               </div>
+               <!-- /.card -->
+             </div>
+             <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+         
+         <!-- /.container-fluid -->
+       </section>
+       <!-- /.content -->
+
+
+       <!-- Main content -->
+       <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header bg-danger">
+                   Email Send Notification
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                                     <div class="row">
+                      <div class="col-md-3"></div>
+                      <div class="col-md-6">
+                          <form action="/EmailNotification" method="post">
+                             {% csrf_token %}
+                            
+                              <div class="form-group">
+                                  <label>Title</label>
+                                  <input type="text" class="form-control" name="Emailtitle" placeholder="Title" />
+                              </div>
+                              <div class="form-group">
+                                  <label>Message</label>
+                                  <textarea name="Emailmessage" rows="5" class="form-control" name="body"></textarea>
+                              </div>
+                              <div class="form-group">
+                                  <button type="submit" name="submit" class="btn btn-primary btn-block">Send Email</button>
+                              </div>
+                          </form>
+                      </div>
+                      <!-- /.col -->
+                      <div class="col-md-3"></div>
+                  </div>
+                 
+                 </div>
+                 <!-- /.card-body -->
+              </div>
+              <!-- /.card -->
+            </div>
+            <!-- /.col -->
+           </div>
+           <!-- /.row -->
+         </div>
+        
+        <!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+   
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.js" integrity="sha512-OmBbzhZ6lgh87tQFDVBHtwfi6MS9raGmNvUNTjDIBb/cgv707v9OuBVpsN6tVVTLOehRFns+o14Nd0/If0lE/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+       {% if message  %}
+       alertify.set('notifier','position', 'top-right');
+       alertify.success('{{message}}' );
+       {% endif %}
+     </script>   
+
+{% endblock %}
